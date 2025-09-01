@@ -1,0 +1,102 @@
+{
+  "title": "The Student with £6 Million",
+  "subtitle": "Computer whizzkid John Bennett is giving up his house and his sports car to be a student. Jan Moir asks him why.",
+  "cards": [
+    {
+      "text": "In the first-floor boardroom of the Software Warehouse headquarters, there is an enormous table made of pale wood. John Bennett is sitting at the end of it. He is 23 years old and wearing a striped three piece suit. His brown tie is tightly knotted and his spectacles are polished and straight. Under the table, once again, his feet do not quite reach the carpet. In short, he looks more like a schoolboy who has been let into the staffroom than a rich young businessman. Under the table, once again, his feet do not quite reach the carpet. He owns a £6 million parcel of the company's shares.",
+      "question": "What is the writer's initial impression of John Bennett?",
+      "choices": [
+        "He is clearly not very confident about being interviewed.",
+        "The clothes he wears are not appropriate for someone of his age.",
+        "From his appearance, you would not think that he is a successful businessman.",
+        "He is keen not to look like a typical businessman."
+      ],
+      "answer": 2,
+      "highlight": "he looks more like a schoolboy who has been let into the staffroom than a rich young businessman"
+    },
+    {
+      "text": "In a few months' time, he will leave these offices, which have been his entire world since he left school, and go to university to study law. 'Before Software Warehouse, my brain, fast-growing and untrained, was an opportunity in search of a project,' says Bennett. The company employs a staff of 322 and has a turnover of £50 million. He had not been to university or worked for another firm before; he built the business from an idea hatched with Steve, his older brother, and a friend in a bedroom. What makes me proudest is not the money, but the company and the people in it, as well - the culture, the style, the attitude.",
+      "question": "When the writer asks him whether he will miss his present lifestyle, John",
+      "choices": [
+        "pretends not to have understood the question.",
+        "agrees that he may have regrets later.",
+        "argues that it is foolish to miss things.",
+        "claims that he is not capable of missing things."
+      ],
+      "answer": 2,
+      "highlight": "What makes me proudest is not the money, but the company and the people in it"
+    },
+    {
+      "text": "This is in character with the very clear line of thinking he pursues, for instance, about his car. 'I used to drive a classy car, but I never enjoyed driving it. It was too showy, which is just not me. I got less than I paid for it; but I was so happy when I sold it. I felt liberated.",
+      "question": "What does John say about his sports car?",
+      "choices": [
+        "He sold it too cheaply.",
+        "It did not reflect his personality.",
+        "It cost more than he had been expecting to pay for it.",
+        "He bought it in order to impress other people."
+      ],
+      "answer": 1,
+      "highlight": "It was too showy, which is just not me"
+    },
+    {
+      "text": "His plan is to qualify as a lawyer before he is 30, and he is not disturbed by having to renounce his massive lifestyle nor by the awkward way of life to learn the finer points of the law in a crummy student residence. He has been keen on law since he was a small boy and his legal ambitions have been precisely worked out: 'I want to do corporate law and be a partner with a large law firm. I don't want to be super-successful. I don't have to be at the top of my profession. I don't want to be earning six figures salary every year. The law is a long game, that's what happens, then fine.'",
+      "question": "How does John feel about his future career?",
+      "choices": [
+        "worried that he may fail to achieve some of his aims",
+        "certain as to how he should develop.",
+        "afraid that he may put too much pressure on himself",
+        "keen to repeat his success in business"
+      ],
+      "answer": 2,
+      "highlight": "I don't have to be at the top of my profession"
+    },
+    {
+      "text": "But why not carry on working here at the firm? He answers the question in his extraordinary measured way: 'There have been times when I have felt that working for the company is not challenging enough for me. But there have also been times when I have felt that my family has doubts about my ability to do the job.'",
+      "question": "What does 'it' in line 50 refer to?",
+      "choices": [
+        "His future career in the law",
+        "Being a partner in a large firm",
+        "Earning a lot of money",
+        "His ambition in the law"
+      ],
+      "answer": 0,
+      "highlight": "His future career in the law"
+    },
+    {
+      "text": "He intends to take early credit on the firm's success himself, claiming that it was his brother who should have made the most of the opportunity, but didn't. 'I get the itch, that's right, every year or so. That means I see a better goal, and I want to go for it,' he says. 'And I'm going to law for something.'",
+      "question": "One reason why John has decided to leave the family company is that",
+      "choices": [
+        "he would like to have a job that people have more respect for.",
+        "there have been too many changes in the company.",
+        "working for the company is not challenging enough for him.",
+        "his family has doubts about his ability."
+      ],
+      "answer": 2,
+      "highlight": "working for the company is not challenging enough for me"
+    },
+    {
+      "text": "Now he is packing away the toys and frills of a wondrous business life and preparing for a period of studenthood. His brother Steve's ability to have good ideas is something he envies.",
+      "question": "What does John say about his brother Steve?",
+      "choices": [
+        "Steve's ability to have good ideas is something he envies.",
+        "He will leave the company in Steve's charge when he leaves.",
+        "He has only succeeded because of Steve's determination.",
+        "The company has only succeeded because of Steve's determination."
+      ],
+      "answer": 0,
+      "highlight": "His brother Steve's ability to have good ideas is something he envies"
+    },
+    {
+      "text": "John is leaving his company to pursue a law degree, feeling liberated and looking forward to new challenges, and holding no regrets about success, wealth, or status.",
+      "question": "Which phrase best describes John's attitude towards his decision?",
+      "choices": [
+        "confident and determined",
+        "worried but optimistic",
+        "excited but uncertain",
+        "calm and philosophical"
+      ],
+      "answer": 0,
+      "highlight": "feeling liberated and looking forward to new challenges"
+    }
+  ]
+}
