@@ -1,1 +1,103 @@
+{
+  "title": "Testing the Water",
+  "subtitle": "Britain's first lifeguards' training centre has just opened. Matt Seaton went to find out what the course was like.",
+  "cards": [
+    {
+      "text": "The scene: a sun-drenched beach. Suddenly, a girl in a red swimming costume comes running along the beach towards me. Do I look as if I need rescuing? Sadly, not. She is busy making the German version of Baywatch, an American TV programme about lifeguards, which is being filmed in Majorca. One week later, the scene is still a sun-drenched beach, but now I'm in Cornwall, England. This time, I'm not on holiday, but on a lifeguard's course. With any luck, and lots of physically demanding work, in just a few days I will be a fully qualified, much-admired lifeguard.<br><br>As I was expecting rain and a howling gale, this was April - I was slightly surprised by the brilliant sunshine. Even so, I did not look forward to the prospect of going into the chilly ocean.",
+      "question": "What does the writer say about becoming a lifeguard?",
+      "choices": [
+        "He felt nervous about the idea.",
+        "He thought it would impress people.",
+        "He thought the best jobs were abroad.",
+        "He worried that he might not complete the course."
+      ],
+      "answer": 3,
+      "highlight": "He worried that he might not complete the course."
+    },
+    {
+      "text": "I checked in at the National Lifeguard Training Centre, checked my size and pulled a wetsuit out of the rack, the kind that's tight as a second skin. Then the double doors led onto the beach, where the shingle bit my feet through the wetsuit boots. Even so, I did not look forward to the prospect of going into the chilly ocean. 300m may not sound much, but after a short run and a dive through the first big wave...",
+      "question": "How did the writer feel about the 300m swim?",
+      "choices": [
+        "It was more difficult than normal.",
+        "He was pleased he had a wetsuit on.",
+        "He welcomed the chance to show his ability.",
+        "It was lucky the weather was good."
+      ],
+      "answer": 0,
+      "highlight": "It was more difficult than normal."
+    },
+    {
+      "text": "300m may not sound much, but after a short run and a dive through the first big wave... The feeling is somewhere between fear and exhilaration when you realize you still have most of your swim ahead of you.",
+      "question": "After diving through a big wave, the writer felt",
+      "choices": [
+        "pleased with his success.",
+        "surprised by the result.",
+        "anxious about his safety.",
+        "prepared to do it again."
+      ],
+      "answer": 2,
+      "highlight": "anxious about his safety."
+    },
+    {
+      "text": "Nothing, however, prepares you for the cold. It smacks you in the face, making your whole skull ache. The surfers have a nice phrase for it: 'ice-cream head'. The swimming, too, was fine—tough.<br><br>George Alecock, who helps run the course, explained: 'People who think being a lifeguard is fun, and sporty, but it's not until you know your stuff.' A surprising amount of that 'stuff' is knowing how to cope with the sea itself—how to read the waves and currents, and above all, how to deal with the cold.",
+      "question": "What does 'it' refer to in line 46?",
+      "choices": [
+        "the cold",
+        "the feeling",
+        "your skill",
+        "your face"
+      ],
+      "answer": 0,
+      "highlight": "the cold"
+    },
+    {
+      "text": "...People who think being a lifeguard is fun, and sporty, but it's not until you know your stuff.<br>A surprising amount of that 'stuff' is knowing how to cope with the sea itself—how to read the waves and currents, and above all, how to deal with the cold.",
+      "question": "What does 'stuff' in line 51 mean?",
+      "choices": [
+        "duties",
+        "responsibility",
+        "theory",
+        "limits"
+      ],
+      "answer": 2,
+      "highlight": "theory"
+    },
+    {
+      "text": "... The problem is that very few of us actually grasp the experience and sense of the sea, so most will simply jump in, and then use all their energy swimming against the waves and currents instead of going with them. Swimmers can easily drown in them.",
+      "question": "What does the writer learn about currents?",
+      "choices": [
+        "Informed swimmers can deal with them.",
+        "Only strong swimmers can swim out of them.",
+        "Swimmers can easily drown in them.",
+        "They are the biggest cause of lifeguards' problems."
+      ],
+      "answer": 2,
+      "highlight": "Swimmers can easily drown in them."
+    },
+    {
+      "text": "...By late afternoon, it looked as if I was going to be spared the final water training session. Then Griffiths, the instructor, announced that it was cancelled... I have to say that Griffiths was very sensible about it.",
+      "question": "How did the writer react to the afternoon wet training session?",
+      "choices": [
+        "He was keen to try out his new skill.",
+        "He found the water too rough when he got in.",
+        "He was disappointed that it was cancelled.",
+        "He thought that Griffiths was very sensible about it."
+      ],
+      "answer": 3,
+      "highlight": "He thought that Griffiths was very sensible about it."
+    },
+    {
+      "text": "At the end of this testing week, the final message was: It is a good way to meet people.",
+      "question": "What does the writer say about being a lifeguard?",
+      "choices": [
+        "It is better than he expected.",
+        "It's a good way to keep healthy.",
+        "It is more interesting than he thought.",
+        "It is a good way to meet people."
+      ],
+      "answer": 3,
+      "highlight": "It is a good way to meet people."
+    }
+  ]
+}
 
