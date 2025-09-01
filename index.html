@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metro Reading Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="reading-metro.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      margin:0;
+    }
+    .container { max-width: 720px; margin:0 auto; padding:24px 1vw 70px 1vw;}
+    h1 {text-align: center; color: #fff; font-size:2.25rem; letter-spacing: 0.04em;}
+    #metroLabels {
+      margin: 38px auto 0 auto;
+      max-width: 640px;
+      display:flex; flex-direction:column; gap:7px;
+    }
+    .metro-label-link {
+      font-size: 1rem;
+      padding: 8px 0 4px 8px;
+      background: rgba(255,255,255,0.84);
+      border-radius: 11px;
+      margin-bottom: 1px;
+      text-decoration:none;
+      color: #1d3355;
+      font-weight: 500;
+      border-left: 6px solid #FFA066;
+      display:inline-block;
+      transition: background 0.14s;
+      cursor: pointer;
+    }
+    .metro-label-link.done { background: #daf5b0; color:#222; border-left:6px solid #46b742;}
+    .metro-label-link:hover { background: #fffcb8;}
+    #metroMap { display:block; margin:38px auto 0 auto; }
+    @media (max-width:700px){#metroMap {width:95vw;height:34vw;}}
+    @media (max-width:440px){
+      #metroLabels{font-size:0.99em;margin-top:28px;}
+      h1{font-size:1.2em;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reading Metro Map</h1>
+    <svg id="metroMap" width="650" height="260" viewBox="0 0 650 230">
+      <!-- Main line (example: up to 6 stops, edit/add more if needed) -->
+      <polyline points="60,200 170,150 290,120 410,130 530,70 600,120" fill="none" stroke="#FFA066" stroke-width="8"/>
+    </svg>
+    <div id="metroLabels"></div>
+  </div>
+  <script>
+    // List of all passages, add as many as you want
+    const passages = [
+      { id: "noreen",        label: "There's No Stopping Her" },
+      { id: "student6m",     label: "The Student with £6 Million" },
+      { id: "testingwater",  label: "Testing the Water" }
+      // Add more as needed...
+    ];
+    // For up to 6, here's some arc points; expand as needed
+    const stops = [
+      {x:60, y:200},
+      {x:170, y:150},
+      {x:290, y:120},
+      {x:410, y:130},
+      {x:530, y:70},
+      {x:600, y:120}
+    ];
+
+    // Progress tracking
+    function getProgress() {
+      try {
+        return JSON.parse(window.localStorage.getItem("readingMetroProgress")||'{}');
+      } catch(e) { return {}; }
+    }
+    function setProgress(id) {
+      let prog=getProgress(); prog[id]=true;
+      window.localStorage.setItem("readingMetroProgress",JSON.stringify(prog));
+    }
+
+    // Draw nodes
+    const svg = document.getElementById("metroMap");
+    const metroLabels = document.getElementById("metroLabels");
+    const progress = getProgress();
+
+    passages.forEach((p,i)=>{
+      let pos = stops[i]||{x:100+90*i, y:220-19*i}; // fallback linear if needed
+      // Draw node
+      let circ = document.createElementNS("http://www.w3.org/2000/svg","circle");
+      circ.setAttribute("cx",pos.x); circ.setAttribute("cy",pos.y); circ.setAttribute("r",27);
+      circ.setAttribute("stroke","#FFA066"); circ.setAttribute("stroke-width","7");
+      circ.setAttribute("fill", progress[p.id] ? "#daf5b0" : "#fff");
+      circ.style.cursor = "pointer";
+      svg.appendChild(circ);
+      // Draw tick if completed
+      if(progress[p.id]){
+        let tick = document.createElementNS("http://www.w3.org/2000/svg","text");
+        tick.setAttribute("x",pos.x-15); tick.setAttribute("y",pos.y+15);
+        tick.setAttribute("font-size","34"); tick.setAttribute("font-weight","bold");
+        tick.setAttribute("fill","#46b742");
+        tick.textContent = "✓";
+        svg.appendChild(tick);
+      }
+      // Interactivity - click node
+      circ.addEventListener('click',()=>window.location.href=`reading-cards.html?test=${p.id}`);
+
+      // Node Label as fallback/clickable
+      let a = document.createElement("a");
+      a.textContent = ` ${i+1}. ${p.label}`;
+      a.className = "metro-label-link" + (progress[p.id]?" done":"");
+      a.href = `reading-cards.html?test=${p.id}`;
+      // Matching tracking on click for demo (optional)
+      a.addEventListener('click',()=>setProgress(p.id));
+      metroLabels.appendChild(a);
+    });
+  </script>
+</body>
+</html>
 
