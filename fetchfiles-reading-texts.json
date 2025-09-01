@@ -1,6 +1,6 @@
 [
   {
-    "id": "testingwater",
+    "id": "testingthewater",
     "title": "Testing the Water",
     "file": "readingpassages/testingthewater.json"
   },
@@ -10,7 +10,7 @@
     "file": "readingpassages/noreen.json"
   },
   {
-    "id": "student6m",
+    "id": "student6million",
     "title": "The Student with £6 Million",
     "file": "readingpassages/student6million.json"
   }
