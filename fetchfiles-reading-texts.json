@@ -1,1 +1,18 @@
+[
+  {
+    "id": "testingwater",
+    "title": "Testing the Water",
+    "file": "readingpassages/testingthewater.json"
+  },
+  {
+    "id": "noreen",
+    "title": "There's No Stopping Her",
+    "file": "readingpassages/noreen.json"
+  },
+  {
+    "id": "student6m",
+    "title": "The Student with £6 Million",
+    "file": "readingpassages/student6million.json"
+  }
+]
 
