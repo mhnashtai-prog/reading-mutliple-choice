@@ -3,8 +3,6 @@ body {
   font-family: 'Inter', 'Montserrat', 'Segoe UI', Arial, sans-serif;
   margin:0;
 }
-
-/* Container & Header */
 .container {
   max-width: 720px;
   margin:0 auto;
@@ -17,63 +15,63 @@ h1 {
   letter-spacing: 0.04em;
   font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
 }
-
-/* Metro SVG Map visuals */
-#metroMap {
-  display:block;
-  margin:38px auto 0 auto;
-  background: transparent;
+/* Glassy (gradient-exposing) card background */
+.card {
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -6px rgba(50,60,110,0.11), 0 1.5px 3px #eee6;
+  padding:14px 6px 12px 8px;
+  margin-bottom:13px;
+  position:relative;
+  transition: background .22s, box-shadow .22s;
 }
-svg .metro-node {
-  transition: fill 0.18s, stroke 0.18s;
+.text-box {
+  margin-bottom: 13px;
+  color: #222;
+  line-height: 1.41;
+  font-size: 0.93rem;
 }
-svg .metro-node:hover {
-  fill:#fffcb8;
-  stroke:#FFA066;
-  filter: drop-shadow(0 1px 8px #ffe6aa);
+.question-title {
+  font-size: 0.87rem;
+  margin-bottom: 7px;
+  color: #283656;
+  font-weight: 500;
 }
-svg text.tick {
-  font-family: 'Montserrat', 'Inter', Arial, sans-serif;
-  font-size:34px;
-  font-weight: bold;
-  fill:#bfff00;
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1px;
 }
-
-/* Metro labels & card/choices style (UNIFIED!) */
-#metroLabels {
-  margin: 30px auto 0 auto;
-  max-width: 640px;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-}
-
-/* Maximal compact modern MOBILE BOXES (option and menu label) */
-.metro-label-link, .choice {
+/* Ultra-modern glassy option boxes */
+.choice {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-family: 'Inter', 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-weight: 500;
-  padding: 2.5px 6px 2.5px 6px;    /* ultra-compact padding */
+  padding: 4px 10px 4px 10px;
   margin-bottom: 0;
   min-height: 22px;
-  background: #888a90;              /* deep modern grey */
-  border-radius: 6px;
+  background: rgba(136,138,144, 0.80);
+  border-radius: 7px;
   border-left: 5px solid #FFA066;
   color: #17222c;
   letter-spacing: .01em;
-  box-shadow: 0 0.5px 2px #d8dce6;
+  box-shadow: 0 2.5px 10px -1.5px rgba(27,36,90,0.10);
   cursor: pointer;
-  transition: background .13s, color .13s, border-left-color .18s;
+  transition: background .13s, color .13s, border-left-color .18s, box-shadow .17s;
   position: relative;
   overflow: hidden;
   text-decoration: none;
   border: none;
-  line-height: 1.12;
+  line-height: 1.18;
   white-space: normal;
   word-break: break-word;
+  backdrop-filter: blur(7px) saturate(1.5);
 }
-.metro-label-link::before, .choice::before {
+.choice::before {
   content: '';
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -83,69 +81,24 @@ svg text.tick {
   z-index: 2;
   transition: background .17s;
 }
-.metro-label-link:hover, .choice:hover {
-  background: #e0b894;
-  color: #bd6732;
+.choice:hover {
+  background: linear-gradient(105deg, #ededcb 0%, #f2e7b3 100%);
+  color: #784621;
   border-left-color: #e5c900;
 }
-.metro-label-link.done, .choice.selected, .choice:active  {
-  background: #ceff8d;            /* vivid lime */
-  color: #224925;
+.choice.selected, .choice:active  {
+  background: linear-gradient(90deg, #e4ffb6 0%, #bfff00 90%);
+  color: #285904;
   border-left-color: #bfff00;
-}
-.metro-label-link.done::before, .choice.selected::before, .choice:active::before {
-  background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
-}
-.metro-label-link.active {
-  border-left-color: #3C61E3;
-  background: rgba(182,246,255,0.18);
-}
-.metro-label-link.active::before {
-  background: linear-gradient(210deg,#3C61E3 33%, #FFB66F 100%);
-}
-.metro-label-link.uc {
-  background: #e8e6e9;
-  color: #999;
-  border-left: 6px solid #CBB299;
-  cursor: not-allowed;
-  opacity: 0.82;
-  pointer-events: none;
-}
-.metro-label-link { text-decoration: none; }
-.metro-label-link:visited { color: inherit; }
-
-/* Reader card and passage body */
-.card {
-  background: #f7f8fa;
-  border-radius:16px;
-  box-shadow:0 9px 11px -8px rgba(83,89,100,0.10);
-  padding:12px 5px 10px 7px;
-  margin-bottom:13px;
-  position:relative;
-}
-.text-box {
-  margin-bottom: 13px;
-  color: #222;
-  line-height: 1.41;
-  font-size: 0.92rem;
-}
-.question-title {
-  font-size: 0.88rem;
-  margin-bottom: 4px;
-  color: #2a3e66;
-  font-weight: 500;
-}
-.choices {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 1px;
+  text-shadow: 0 1px 1px #ffffb6cc;
+  box-shadow: 0 3.5px 12px -2px #bfff00a6;
 }
 .highlighted {
-  background: #bfff00;
-  color: #142712;
+  background: #daff47;
+  color: #16390e;
   border-radius: 2px;
   padding: 0 2px;
+  font-weight: 600;
 }
 .feedback {
   margin-top: 2px;
@@ -171,13 +124,86 @@ svg text.tick {
   font-family: inherit;
 }
 .card-btn:active {
-  background: #d5ff74;
+  background: #c8fa5e;
 }
 .card-btn:disabled {
   background: #cdecce;
   cursor: default;
   opacity: 0.7;
 }
+
+/* Metro/drop-down labels: visually matched, glassy on same gradient */
+.metro-label-link {
+  display: block;
+  font-size: 0.77rem;
+  font-family: 'Inter', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+  padding: 6px 10px 6px 11px;
+  min-height: 22px;
+  background: rgba(136,138,144, 0.79);
+  border-radius: 7px;
+  border-left: 5px solid #FFA066;
+  color: #17222c;
+  letter-spacing: .01em;
+  box-shadow: 0 2.5px 10px -1.5px rgba(27,36,90,0.12);
+  cursor: pointer;
+  transition: background .13s, color .13s, border-left-color .18s, box-shadow .17s;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  line-height: 1.20;
+  margin-bottom: 2px;
+  backdrop-filter: blur(7px) saturate(1.45);
+}
+.metro-label-link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
+  border-radius: 6px 0 0 6px;
+  z-index: 2;
+  transition: background .17s;
+}
+.metro-label-link:hover {
+  background: linear-gradient(105deg, #e4eacf 0%, #e0f6c7 100%);
+  color: #784621;
+  border-left-color: #e5c900;
+}
+.metro-label-link.done {
+  background: linear-gradient(90deg, #e4ffb6 0%, #bfff00 90%);
+  color: #224925;
+  border-left-color: #bfff00;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+.metro-label-link.done::before {
+  background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
+}
+.metro-label-link.active {
+  border-left-color: #3C61E3;
+  background: rgba(182,246,255,0.22);
+}
+.metro-label-link.uc {
+  background: #e8e6e9;
+  color: #999;
+  border-left: 6px solid #CBB299;
+  cursor: not-allowed;
+  opacity: 0.67;
+  pointer-events: none;
+}
+.metro-label-link { text-decoration: none; }
+.metro-label-link:visited { color: inherit; }
+
+/* Metro container etc. */
+#metroLabels {
+  margin: 30px auto 0 auto;
+  max-width: 640px;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
 /* Floating footer */
 .footer {
   background: #222;
@@ -222,5 +248,5 @@ svg text.tick {
   #metroLabels, .container { font-size:0.91em; margin-top:8px; }
   h1{ font-size:1.08em; }
   .footer { font-size: 0.83rem; }
-  .choice, .metro-label-link { font-size: 0.67rem; padding: 1.5px 6px 1.5px 3px; }
+  .choice, .metro-label-link { font-size: 0.67rem; padding: 2px 6px 2px 5px; }
 }
