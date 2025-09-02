@@ -13,6 +13,54 @@
     "id": "student6m",
     "title": "The Student with £6 Million",
     "file": "readingpassages/student6million.json"
+  },
+  {
+    "id": "stitchintime",
+    "title": "A Stitch in Time",
+    "subtitle": "Steve McGrail investigates the world of street theatre costume design.",
+    "file": "readingpassages/stitchintime.json"
+  },
+  {
+    "id": "seeandbeseen",
+    "title": "See and Be Seen",
+    "subtitle": "Art is about communication, says Bob Brandy.",
+    "file": "readingpassages/seeandbeseen.json"
+  },
+  {
+    "id": "specialistmusicschools",
+    "title": "Specialist Music Schools",
+    "subtitle": "How to cope with a child who shows outstanding musical ability?",
+    "file": "readingpassages/specialistmusicschools.json"
+  },
+  {
+    "id": "naturalclassic",
+    "title": "Natural Classic: The Golden Hawks",
+    "subtitle": "Martha Holmes, marine biologist, on the book that most influenced her.",
+    "file": "readingpassages/naturalclassic.json"
+  },
+  {
+    "id": "passage1",
+    "title": "Passage One (Under Construction)",
+    "file": "readingpassages/passage1.json"
+  },
+  {
+    "id": "passage2",
+    "title": "Passage Two (Under Construction)",
+    "file": "readingpassages/passage2.json"
+  },
+  {
+    "id": "passage3",
+    "title": "Passage Three (Under Construction)",
+    "file": "readingpassages/passage3.json"
+  },
+  {
+    "id": "passage4",
+    "title": "Passage Four (Under Construction)",
+    "file": "readingpassages/passage4.json"
+  },
+  {
+    "id": "passage5",
+    "title": "Passage Five (Under Construction)",
+    "file": "readingpassages/passage5.json"
   }
 ]
-
