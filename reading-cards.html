@@ -335,13 +335,6 @@ function renderCards(data) {
 </script>
 </body>
 </html>
-('feedback-'+idx).textContent = '';
-    card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
-    document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-  };
-  window.nextQ = function(idx) {
-    let nextCard = document.querySelector('.card[data-idx="'+(idx+1)+'"]');
-    if(nextCard) nextCard.scrollIntoView({behavior:'smooth',block:'start'});
   };
 }
 </script>
