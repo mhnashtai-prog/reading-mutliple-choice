@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Reading Cards</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,500|Montserrat:400,500,700&display=swap" rel="stylesheet">
   <style>
     body {
       background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
@@ -22,94 +23,285 @@
       font-size:2.25rem;
       letter-spacing: 0.04em;
       font-family: 'Montserrat', Arial, sans-serif;
+      margin-bottom: 10px;
     }
-    /* Metro/choices/card style */
-    .card { background: #f7f8fa; border-radius:20px; box-shadow:0 14px 18px -8px rgba(83,89,100,0.13); padding:20px 18px 32px 18px; margin-bottom:30px; position:relative; }
-    #metroLabels {
-      margin: 38px auto 0 auto;
-      max-width: 640px;
-      display:flex;
-      flex-direction:column;
-      gap:7px;
+    .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      font-weight: 400;
     }
-    .metro-label-link, .choice {
-      display: block;
-      font-size: 1.08rem;
-      font-family: 'Montserrat', Arial, sans-serif;
-      padding: 15px 0 10px 22px;
-      margin-bottom: 14px;
-      background: rgba(255,255,255,0.23);
-      border-radius: 15px;
-      border-left: 9px solid #FFA066;
-      color: #1d3355;
-      font-weight: 600;
-      letter-spacing: .019em;
-      box-shadow: 0 5px 38px -12px rgba(120, 89, 180, 0.15), 0 0.5px 2px rgba(71,53,116,0.10);
-      backdrop-filter: blur(2px);
-      cursor: pointer;
-      transition: background .13s, color .13s, border-left-color .18s;
+    
+    /* Enhanced Card Styling */
+    .card {
+      background: linear-gradient(135deg,rgba(44,90,160,0.28) 0%,rgba(245,169,186,0.28) 100%);
+      backdrop-filter: blur(13px) saturate(1.2);
+      border: 1.5px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      box-shadow: 0 10px 26px -8px rgba(44,90,160,0.08), 0 1.5px 3px #eee6;
+      padding:16px 12px 18px 14px;
+      margin-bottom: 20px;
+      transition: background .22s, box-shadow .22s, transform .2s;
       position: relative;
-      overflow: hidden;
-      text-decoration: none;
-      border: none;
     }
-    .metro-label-link::before, .choice::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 7px;
-      background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
-      border-radius: 10px 0 0 10px;
-      z-index: 2;
-      transition: background .17s;
+    .card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px -8px rgba(44,90,160,0.12), 0 2px 4px #eee8;
     }
-    .metro-label-link:hover, .choice:hover {
-      background: rgba(255,255,240,0.45);
-      color: #bd6732;
-      border-left-color: #e96443;
-    }
-    .metro-label-link.done, .choice.selected, .choice:active  {
-      background: rgba(194,248,180, 0.44);
-      color: #275216;
-      border-left-color: #93c560;
-    }
-    .metro-label-link.done::before, .choice.selected::before, .choice:active::before {
-      background: linear-gradient(210deg, #93c560 40%, #41e3ce 100%);
-    }
-    .metro-label-link.active {
-      border-left-color: #3C61E3;
-      background: rgba(106,203,250, 0.20);
-    }
-    .metro-label-link.active::before {
-      background: linear-gradient(210deg,#3C61E3 33%, #FFB66F 100%);
-    }
+    
     .text-box {
-      margin-bottom: 36px;
+      margin-bottom: 18px;
       color: #222;
       line-height: 1.58;
       font-size: 1rem;
     }
-    .question-title { font-size: 1.03rem; margin-bottom: 15px; color: #2a3e66; font-weight: 500; }
-    .choices { display: flex; flex-direction: column; gap: 2px; margin-bottom: 7px;}
-    .highlighted { background: #93C560; color: #181c2e; border-radius: 4px; padding: 0 2px;}
-    .feedback { margin-top: 8px; font-size: 1em; color: #c72c2c; min-height: 18px; }
-    .card-actions { margin-top: 10px; display: flex; gap: 10px;}
-    .card-btn { background: #93C560; color: #fff; border: none; border-radius: 12px; font-size: 1em; padding: 8px 18px; cursor: pointer; transition: background 0.13s; font-family: inherit;}
-    .card-btn:active { background: #bfd58e; }
-    .card-btn:disabled { background: #b8d3ea; cursor: default; opacity: 0.7; }
-    .footer { background: #222; color:#fff; font-weight:600; max-width:670px; margin:0 auto; padding:13px 20vw 13px 18px; text-align:center; font-size:1.13rem; position:fixed; left:50%; bottom:0; transform:translateX(-50%); width:99vw; border-radius: 18px 18px 0 0; z-index:15; display:flex;align-items:center;justify-content:center;}
-    .footer-btn { background: none; color:#fff; border:none; font-size:1.05rem; font-weight:600; margin-left:18px; margin-right:8px; cursor:pointer; display:flex;align-items:center;}
-    .footer-btn .arrow { font-size:1.45em; margin-right:7px; }
+    
+    .question-title {
+      font-size: 1.03rem;
+      margin-bottom: 12px;
+      color: #2442b0;
+      font-weight: 500;
+    }
+    
+    /* Enhanced Multiple Choice Styling */
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 12px;
+    }
+    
+    .choice {
+      background: linear-gradient(120deg, rgba(44,90,160,0.23) 0%, rgba(245,169,186,0.20) 100%);
+      font-size: 0.9rem;
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      padding: 8px 12px;
+      min-height: 28px;
+      border-radius: 10px;
+      border-left: 5px solid #FFA066;
+      color: #222b2c;
+      margin-bottom: 0;
+      box-shadow: 0 2px 9px -2px rgba(44,90,160,0.09);
+      cursor: pointer;
+      transition: all .2s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px) saturate(1.25);
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      white-space: normal;
+      word-break: break-word;
+      
+      /* Enhanced touch targets for mobile */
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .choice::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
+      border-radius: 8px 0 0 8px;
+      z-index: 2;
+      transition: background .17s;
+    }
+    
+    .choice:hover {
+      background: rgba(255,255,255,0.35);
+      color: #784621;
+      border-left-color: #e96443;
+      transform: translateX(2px);
+    }
+    
+    .choice.selected, .choice:active {
+      background: linear-gradient(90deg, #eaffba 0%, #bfff00 90%);
+      color: #274604;
+      border-left-color: #bfff00;
+      font-weight: 600;
+      box-shadow: 0 4px 14px -2px #bfff0040;
+      transform: translateX(3px);
+    }
+    
+    .choice.selected::before, .choice:active::before {
+      background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
+    }
+    
+    /* Text Highlighting */
+    .highlighted {
+      background: linear-gradient(90deg, #daff47 0%, #bfff00 80%);
+      color: #16390e;
+      border-radius: 4px;
+      padding: 2px 4px;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(191, 255, 0, 0.3);
+      transition: all .2s;
+    }
+    
+    .feedback {
+      margin-top: 12px;
+      font-size: 0.95em;
+      color: #c72c2c;
+      min-height: 20px;
+      font-weight: 500;
+    }
+    
+    /* Enhanced Button Styling */
+    .card-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .card-btn {
+      background: linear-gradient(135deg, #bfff00 0%, #93c560 100%);
+      color: #214e19;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9em;
+      padding: 8px 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(191, 255, 0, 0.2);
+      transition: all .15s ease;
+      font-family: inherit;
+      font-weight: 600;
+      
+      /* Enhanced touch targets */
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .card-btn:hover {
+      background: linear-gradient(135deg, #d4ff33 0%, #a8d170 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(191, 255, 0, 0.3);
+    }
+    
+    .card-btn:active {
+      background: linear-gradient(135deg, #a8d170 0%, #7fb050 100%);
+      transform: translateY(0);
+      box-shadow: 0 1px 3px rgba(191, 255, 0, 0.4);
+    }
+    
+    .card-btn:disabled {
+      background: #cdecce;
+      cursor: default;
+      opacity: 0.7;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #222 0%, #333 100%);
+      color:#fff;
+      font-weight:600;
+      max-width:670px;
+      margin:0 auto;
+      padding:12px 20px;
+      text-align:center;
+      font-size:1.05rem;
+      position:fixed;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      width: calc(100vw - 40px);
+      max-width: 670px;
+      border-radius: 16px 16px 0 0;
+      z-index:100;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+    
+    .footer-btn {
+      background: none;
+      color:#fff;
+      border:none;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background .2s;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .footer-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .footer-btn .arrow { 
+      font-size:1.2em; 
+      margin-right:6px; 
+    }
+    
+    /* Mobile Optimizations */
     @media (max-width:700px){
-      .footer {font-size: 0.99rem;}
+      .container { 
+        padding: 16px 3vw 80px 3vw; 
+        font-size: 0.95em;
+      }
+      .choice { 
+        font-size: 0.85rem; 
+        padding: 10px 12px;
+        min-height: 32px;
+      }
+      .card-btn {
+        font-size: 0.85em;
+        padding: 10px 14px;
+        min-height: 38px;
+      }
+      .footer {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+      }
     }
-    @media (max-width:440px){
-      #metroLabels, .container {font-size:0.99em;margin-top:28px;}
-      h1{font-size:1.2em;}
-      .footer{font-size: 0.95rem;}
+    
+    @media (max-width:480px){
+      h1{ 
+        font-size:1.8em; 
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+      .choice { 
+        font-size: 0.8rem; 
+        padding: 12px 10px;
+        min-height: 36px;
+      }
+      .card-actions {
+        gap: 6px;
+      }
+      .card-btn {
+        font-size: 0.8em;
+        padding: 12px 12px;
+        min-height: 40px;
+        flex: 1;
+        min-width: 70px;
+      }
+      .footer {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        flex-direction: column;
+        gap: 4px;
+      }
     }
-    .metro-label-link { text-decoration: none; }
-    .metro-label-link:visited { color: inherit; }
   </style>
 </head>
 <body>
@@ -118,24 +310,68 @@
     <h1 style="color:white;text-align:center;">Loading...</h1>
   </div>
 </div>
+
 <script>
+// Utility Functions
 function getQueryParam(name) {
   let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
   return match && decodeURIComponent(match[1]);
 }
-let testId = getQueryParam('test');
+
 function setPassageCompleted(passageId) {
   let prog = {};
-  try { prog = JSON.parse(localStorage.getItem("readingMetroProgress")||"{}"); } catch(e){ prog = {}; }
+  try { 
+    prog = JSON.parse(localStorage.getItem("readingMetroProgress")||"{}"); 
+  } catch(e){ 
+    prog = {}; 
+  }
   prog[passageId] = true;
   localStorage.setItem("readingMetroProgress", JSON.stringify(prog));
 }
+
+// Enhanced text highlighting function - fixes Issue 2
+function highlightTextInHTML(htmlContent, highlightText) {
+  if (!highlightText || highlightText.trim() === '') return htmlContent;
+  
+  // Create a temporary div to parse HTML content
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlContent;
+  
+  // Function to highlight text in text nodes only
+  function highlightInTextNodes(node, searchText) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      const regex = new RegExp(`(${searchText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      
+      if (regex.test(text)) {
+        const highlightedHTML = text.replace(regex, '<span class="highlight-target">$1</span>');
+        const wrapper = document.createElement('span');
+        wrapper.innerHTML = highlightedHTML;
+        node.parentNode.replaceChild(wrapper, node);
+      }
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      // Recursively process child nodes
+      const children = Array.from(node.childNodes);
+      children.forEach(child => highlightInTextNodes(child, searchText));
+    }
+  }
+  
+  highlightInTextNodes(tempDiv, highlightText);
+  return tempDiv.innerHTML;
+}
+
+// Main application logic
+let testId = getQueryParam('test');
+
 fetch("fetchfiles-reading-texts.json")
   .then(r=>r.json())
   .then(data=>{
     let manifest = data.find(item=>item.id===testId);
     if (!manifest) { 
-      document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Test not found: " + testId + "</h1></div>"; 
+      document.getElementById('app').innerHTML = `
+        <div class='container'>
+          <h1 style='color:white;text-align:center;'>Test not found: ${testId}</h1>
+        </div>`; 
       return;
     }
     return fetch(manifest.file).then(r=>r.json());
@@ -146,98 +382,209 @@ fetch("fetchfiles-reading-texts.json")
   })
   .catch(err=>{
     console.error(err);
-    document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Error: " + err.message + "</h1></div>";
+    document.getElementById('app').innerHTML = `
+      <div class='container'>
+        <h1 style='color:white;text-align:center;'>Error: ${err.message}</h1>
+      </div>`;
   });
+
 function renderCards(data) {
+  // Process each card's text content for highlighting
+  const processedCards = data.cards.map((card, index) => {
+    const processedText = highlightTextInHTML(card.text, card.highlight);
+    return {
+      ...card,
+      processedText: processedText
+    };
+  });
+  
   let html = `
     <div class="container">
-      <div class="title">${data.title||'Test'}</div>
-      <div class="subtitle">${data.subtitle||''}</div>
-      <div class="divider"></div>
-      ${data.cards.map((card,i)=>`
+      <h1>${data.title||'Reading Comprehension'}</h1>
+      ${data.subtitle ? `<div class="subtitle">${data.subtitle}</div>` : ''}
+      ${processedCards.map((card,i)=>`
       <div class="card" data-idx="${i}">
         <div class="text-box">
-          ${card.text.replace(card.highlight, `<span id="ref-${i}">${card.highlight}</span>`)}
+          ${card.processedText}
         </div>
         <div class="question-title">${card.question}</div>
         <div class="choices">
-          ${card.choices.map((c,j)=>`
-            <div class="choice" data-answer="${String.fromCharCode(65+j)}">${String.fromCharCode(65+j)}. ${c}</div>
-          `).join("")}
+          ${card.choices.map((c,j)=>{
+            if (!c || c.trim() === '') return '';
+            return `<div class="choice" data-answer="${String.fromCharCode(65+j)}" data-card="${i}">${String.fromCharCode(65+j)}. ${c}</div>`;
+          }).join("")}
         </div>
         <div class="feedback" id="feedback-${i}"></div>
         <div class="card-actions">
-          <button class="card-btn" onclick="showAnswer(${i})">Show</button>
-          <button class="card-btn" onclick="repeatQ(${i})">Repeat</button>
-          ${i < data.cards.length-1 ? `<button class="card-btn" onclick="nextQ(${i})">Next</button>` : ""}
+          <button class="card-btn" data-action="show" data-card="${i}">Show Answer</button>
+          <button class="card-btn" data-action="repeat" data-card="${i}">Try Again</button>
+          ${i < data.cards.length-1 ? `<button class="card-btn" data-action="next" data-card="${i}">Next Question</button>` : ''}
         </div>
       </div>
       `).join("")}
     </div>
     <div class="footer">
       <span>Score: <span id="score">0</span> / ${data.cards.length}</span>
-      <button class="footer-btn" onclick="window.location.href='index.html'"><span class="arrow">←</span> RETURN</button>
+      <button class="footer-btn" data-action="return"><span class="arrow">←</span> Return to Menu</button>
     </div>
   `;
+  
   document.getElementById('app').innerHTML = html;
+  
+  // Initialize quiz logic
+  initializeQuiz(data);
+}
+
+function initializeQuiz(data) {
   const correctAnswers = data.cards.map((card)=>String.fromCharCode(65+(card.answer || 0)));
   let scores = Array(data.cards.length).fill(0);
   let answered = Array(data.cards.length).fill(false);
+  
+  function updateScore() {
+    document.getElementById('score').textContent = scores.reduce((a,b)=>a+b,0);
+  }
+  
   function checkAllAnswered() {
     if (answered.every(x=>x)) {
       setPassageCompleted(testId);
     }
   }
-  document.querySelectorAll('.card').forEach((card,idx) => {
-    card.querySelectorAll('.choice').forEach(choice => {
-      choice.onclick = () => {
-        if (answered[idx]) return;
-        card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
-        choice.classList.add('selected');
-        let val = choice.getAttribute('data-answer');
-        let ref = document.getElementById('ref-'+idx);
-        let fb = document.getElementById('feedback-'+idx);
-        if (val === correctAnswers[idx]) {
-          fb.textContent = "";
-          if (ref) ref.classList.add('highlighted');
-          scores[idx]=1;
-        } else {
-          fb.textContent = "There is no reference in the text.";
-          if (ref) ref.classList.remove('highlighted');
-          scores[idx]=0;
-        }
-        answered[idx]=true;
-        document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-        checkAllAnswered();
-      };
+  
+  function highlightCorrectText(cardIndex) {
+    const card = document.querySelector(`.card[data-idx="${cardIndex}"]`);
+    const highlights = card.querySelectorAll('.highlight-target');
+    highlights.forEach(highlight => {
+      highlight.classList.add('highlighted');
     });
+  }
+  
+  function removeHighlight(cardIndex) {
+    const card = document.querySelector(`.card[data-idx="${cardIndex}"]`);
+    const highlights = card.querySelectorAll('.highlight-target');
+    highlights.forEach(highlight => {
+      highlight.classList.remove('highlighted');
+    });
+  }
+  
+  // Enhanced event handling - fixes Issue 3
+  document.addEventListener('click', function(e) {
+    // Handle choice selection
+    if (e.target.classList.contains('choice')) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const cardIndex = parseInt(e.target.dataset.card);
+      
+      if (answered[cardIndex]) return;
+      
+      // Clear previous selections
+      const card = document.querySelector(`.card[data-idx="${cardIndex}"]`);
+      card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+      
+      // Select current choice
+      e.target.classList.add('selected');
+      
+      const selectedAnswer = e.target.dataset.answer;
+      const feedback = document.getElementById(`feedback-${cardIndex}`);
+      
+      if (selectedAnswer === correctAnswers[cardIndex]) {
+        feedback.textContent = "";
+        feedback.style.color = "#2d7016";
+        highlightCorrectText(cardIndex);
+        scores[cardIndex] = 1;
+      } else {
+        feedback.textContent = "There is no reference in the text for this answer.";
+        feedback.style.color = "#c72c2c";
+        removeHighlight(cardIndex);
+        scores[cardIndex] = 0;
+      }
+      
+      answered[cardIndex] = true;
+      updateScore();
+      checkAllAnswered();
+      return;
+    }
+    
+    // Handle button clicks
+    if (e.target.classList.contains('card-btn') || e.target.closest('.card-btn')) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const button = e.target.classList.contains('card-btn') ? e.target : e.target.closest('.card-btn');
+      const action = button.dataset.action;
+      const cardIndex = parseInt(button.dataset.card);
+      
+      switch(action) {
+        case 'show':
+          showAnswer(cardIndex);
+          break;
+        case 'repeat':
+          repeatQuestion(cardIndex);
+          break;
+        case 'next':
+          nextQuestion(cardIndex);
+          break;
+      }
+      return;
+    }
+    
+    // Handle footer button
+    if (e.target.classList.contains('footer-btn') || e.target.closest('.footer-btn')) {
+      e.preventDefault();
+      window.location.href = 'index.html';
+      return;
+    }
   });
-  window.showAnswer = function(idx) {
-    let card = document.querySelector('.card[data-idx="'+idx+'"]');
-    let correct = correctAnswers[idx];
-    card.querySelectorAll('.choice').forEach(c => {
-      if (c.getAttribute('data-answer')===correct) c.classList.add('selected');
-    });
-    let ref = document.getElementById('ref-'+idx);
-    if (ref) ref.classList.add('highlighted');
-    document.getElementById('feedback-'+idx).textContent = '';
-    scores[idx]=1; answered[idx]=true;
-    document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-    checkAllAnswered();
-  };
-  window.repeatQ = function(idx) {
-    answered[idx]=false; scores[idx]=0;
-    let card = document.querySelector('.card[data-idx="'+idx+'"]');
-    let ref = document.getElementById('ref-'+idx);
-    if (ref) ref.classList.remove('highlighted');
-    document.getElementById('feedback-'+idx).textContent = '';
+  
+  function showAnswer(cardIndex) {
+    const card = document.querySelector(`.card[data-idx="${cardIndex}"]`);
+    const correctAnswer = correctAnswers[cardIndex];
+    
+    // Clear previous selections
     card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
-    document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-  };
-  window.nextQ = function(idx) {
-    let nextCard = document.querySelector('.card[data-idx="'+(idx+1)+'"]');
-    if(nextCard) nextCard.scrollIntoView({behavior:'smooth',block:'start'});
-  };
+    
+    // Select correct answer
+    const correctChoice = card.querySelector(`.choice[data-answer="${correctAnswer}"]`);
+    if (correctChoice) {
+      correctChoice.classList.add('selected');
+    }
+    
+    // Show highlighting and clear feedback
+    highlightCorrectText(cardIndex);
+    const feedback = document.getElementById(`feedback-${cardIndex}`);
+    feedback.textContent = '';
+    feedback.style.color = "#2d7016";
+    
+    scores[cardIndex] = 1;
+    answered[cardIndex] = true;
+    updateScore();
+    checkAllAnswered();
+  }
+  
+  function repeatQuestion(cardIndex) {
+    answered[cardIndex] = false;
+    scores[cardIndex] = 0;
+    
+    const card = document.querySelector(`.card[data-idx="${cardIndex}"]`);
+    removeHighlight(cardIndex);
+    
+    const feedback = document.getElementById(`feedback-${cardIndex}`);
+    feedback.textContent = '';
+    
+    card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+    updateScore();
+  }
+  
+  function nextQuestion(cardIndex) {
+    const nextCard = document.querySelector(`.card[data-idx="${cardIndex + 1}"]`);
+    if (nextCard) {
+      nextCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  }
 }
 </script>
 </body>
