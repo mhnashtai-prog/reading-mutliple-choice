@@ -15,18 +15,56 @@
     .title { margin-top: 14px; font-size: 2.08rem; color: #fff; font-family: 'Montserrat', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.09em; text-shadow: 0 3px 10px rgba(0,0,0,.12); margin-bottom: 7px; font-weight: 500; text-align: center;}
     .subtitle {text-align:center; color:#f5a9ba; font-size:1.13rem; margin-top:3px; margin-bottom:22px;}
     .divider { width: 46px; height: 2px; background: rgba(255,255,255,0.8); margin: 0 auto 19px auto; border-radius: 2px; opacity: 0.93;}
-    .card { background: #fffdfc; border-radius:20px; box-shadow:0 14px 18px -8px rgba(83,89,100,0.13),0 1.5px 8px -6px #637faa2d; padding:20px 18px 10px 18px; margin-bottom:30px; position:relative; }
+    .card { background: rgba(255,255,255,0.13); border-radius:20px; box-shadow:0 14px 18px -8px rgba(83,89,100,0.13),0 1.5px 8px -6px #637faa2d; padding:20px 18px 10px 18px; margin-bottom:30px; position:relative; }
     .text-box { margin-bottom: 12px; color: #222; line-height: 1.58; font-size: 1rem;}
-    .highlighted { background: #93C560; color: #181c2e; border-radius: 4px; padding: 0 2px;}
-    .question-title { font-size: 1.03rem; margin-bottom: 10px; color: #2a3e66; font-weight: 500; }
-    .choices { display: flex; flex-direction: column; gap: 13px; margin-bottom: 7px;}
+
+    /* Modern glassy choice boxes, like the metro menu */
     .choice {
-      background: linear-gradient(160deg, #fafcff 70%, #e9eaea 100%);
-      border-radius: 22px;
-      box-shadow:0 14px 20px -8px rgba(83,89,100,0.17),0 3px 14px -8px #637faa2d,-10px -10px 24px -3px rgba(255,255,255,0.90),0px -7px 14px -1px rgba(255,230,150,0.18),inset 2px 2px 6px rgba(255,255,255,0.39),inset -1px -1px 7px rgba(0,0,0,0.04);
-      border:1px solid #e6e7ea; color:#181c2e; font-size:1.15em; cursor:pointer; padding:13px 22px; transition:background 0.15s, box-shadow 0.16s, border 0.14s; text-align:left; user-select:none;
+      display: block;
+      font-size: 1.08rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      padding: 15px 0 10px 22px;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.23);
+      border-radius: 15px;
+      border-left: 9px solid #FFA066;
+      color: #1d3355;
+      font-weight: 600;
+      letter-spacing: .019em;
+      box-shadow: 0 5px 38px -12px rgba(120, 89, 180, 0.15), 0 0.5px 2px rgba(71,53,116,0.10);
+      backdrop-filter: blur(2px);
+      cursor: pointer;
+      transition: background .13s, color .13s, border-left-color .18s;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      text-align: left;
     }
-    .choice.selected, .choice:active { background:#daf5b0; box-shadow:0px 18px 25px -10px rgba(60,210,89,0.13),0px 3px 13px 0 rgba(211,255,219,0.16),inset 1.5px 1.5px 3px rgba(255,255,255,0.17),inset -3px -3px 8px rgba(147,197,96,0.12); border:2px solid #93C560; color:#181c2e }
+    .choice::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 7px;
+      background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
+      border-radius: 10px 0 0 10px;
+      z-index: 2;
+      transition: background .17s;
+    }
+    .choice:hover {
+      background: rgba(255,255,240,0.45);
+      color: #bd6732;
+      border-left-color: #e96443;
+    }
+    .choice.selected, .choice:active {
+      background: rgba(194,248,180, 0.44);
+      color: #275216;
+      border-left-color: #93c560;
+    }
+    .choice.selected::before, .choice:active::before {
+      background: linear-gradient(210deg, #93c560 40%, #41e3ce 100%);
+    }
+
+    .highlighted { background: #93C560; color: #181c2e; border-radius: 4px; padding: 0 2px;}
     .feedback { margin-top: 8px; font-size: 1em; color: #c72c2c; min-height: 18px; }
     .card-actions { margin-top: 10px; display: flex; gap: 10px;}
     .card-btn { background: #93C560; color: #fff; border: none; border-radius: 12px; font-size: 1em; padding: 8px 18px; cursor: pointer; transition: background 0.13s; font-family: inherit;}
