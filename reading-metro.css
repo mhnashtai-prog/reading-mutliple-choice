@@ -1,78 +1,51 @@
-body {
-  background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
-  font-family: 'Inter', 'Montserrat', Arial, sans-serif;
-  margin:0;
-}
-.container {
-  max-width: 720px;
-  margin:0 auto;
-  padding:24px 1vw 70px 1vw;
-}
-h1 {
-  text-align: center;
-  color: #fff;
-  font-size:2.25rem;
-  letter-spacing: 0.04em;
+.metro-label-link {
+  display: block;
+  font-size: 1.08rem;
   font-family: 'Montserrat', Arial, sans-serif;
+  padding: 14px 0 10px 22px;
+  margin-bottom: 9px;
+  background: rgba(255,255,255,0.23);
+  border-radius: 15px;
+  border-left: 9px solid #FFA066;
+  color: #1d3355;
+  font-weight: 600;
+  letter-spacing: .019em;
+  box-shadow: 0 5px 38px -12px rgba(120, 89, 180, 0.15), 0 0.5px 2px rgba(71,53,116,0.10);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  transition: background .13s, color .13s, border-left-color .18s;
+  position: relative;
+  overflow: hidden;
 }
 
-#metroMap {
-  display:block;
-  margin:38px auto 0 auto;
-  background: transparent;
-}
-#metroLabels {
-  margin: 38px auto 0 auto;
-  max-width: 640px;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-.metro-label-link {
-  font-size: 1rem;
-  padding: 8px 0 4px 8px;
-  background: rgba(255,255,255,0.84);
-  border-radius: 11px;
-  margin-bottom: 1px;
-  text-decoration:none;
-  color: #1d3355;
-  font-weight: 500;
-  border-left: 6px solid #FFA066;
-  display:inline-block;
-  transition: background 0.14s;
-  cursor: pointer;
-}
-.metro-label-link.done {
-  background: #daf5b0;
-  color:#222;
-  border-left:6px solid #46b742;
-  text-decoration:line-through;
-  opacity:0.78;
+.metro-label-link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 7px;
+  background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
+  border-radius: 10px 0 0 10px;
+  z-index: 2;
+  transition: background .17s;
 }
 .metro-label-link:hover {
-  background: #fffcb8;
+  background: rgba(255,255,240,0.45);
+  color: #bd6732;
+  border-left-color: #e96443;
 }
 
-svg .metro-node {
-  transition: fill 0.18s, stroke 0.18s;
+.metro-label-link.done {
+  background: rgba(194,248,180, 0.44);
+  color: #275216;
+  border-left-color: #93c560;
 }
-svg .metro-node:hover {
-  fill:#fffcb8;
-  stroke:#FFA066;
-  filter: drop-shadow(0 1px 8px #ffe6aa);
+.metro-label-link.done::before {
+  background: linear-gradient(210deg, #93c560 40%, #41e3ce 100%);
 }
-svg text.tick {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size:34px;
-  font-weight: bold;
-  fill:#46b742;
+.metro-label-link.active {
+  border-left-color: #3C61E3;
+  background: rgba(106,203,250, 0.20);
 }
-
-@media (max-width:700px){
-  #metroMap {width:95vw;height:38vw;}
+.metro-label-link.active::before {
+  background: linear-gradient(210deg,#3C61E3 33%, #FFB66F 100%);
 }
-@media (max-width:440px){
-  #metroLabels {font-size:0.99em;margin-top:28px;}
-  h1{font-size:1.2em;}
-}
-
