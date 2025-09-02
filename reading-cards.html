@@ -11,69 +11,69 @@
       margin:0;
       min-height: 100vh;
     }
-    .container { 
-      max-width:670px; 
-      margin:0 auto; 
-      padding:18px 2vw 110px 2vw; 
+    .container {
+      max-width:670px;
+      margin:0 auto;
+      padding:18px 2vw 110px 2vw;
     }
-    .title { 
-      margin-top: 14px; 
-      font-size: 2.08rem; 
-      color: #fff; 
-      text-transform: uppercase; 
-      letter-spacing: 0.09em; 
-      text-shadow: 0 3px 10px rgba(0,0,0,.12); 
-      margin-bottom: 7px; 
-      font-weight: 500; 
+    .title {
+      margin-top: 14px;
+      font-size: 2.08rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      text-shadow: 0 3px 10px rgba(0,0,0,.12);
+      margin-bottom: 7px;
+      font-weight: 500;
       text-align: center;
     }
     .subtitle {
-      text-align:center; 
-      color:#f5a9ba; 
-      font-size:1.13rem; 
-      margin-top:3px; 
+      text-align:center;
+      color:#f5a9ba;
+      font-size:1.13rem;
+      margin-top:3px;
       margin-bottom:22px;
     }
-    .divider { 
-      width: 46px; 
-      height: 2px; 
-      background: rgba(255,255,255,0.8); 
-      margin: 0 auto 19px auto; 
-      border-radius: 2px; 
+    .divider {
+      width: 46px;
+      height: 2px;
+      background: rgba(255,255,255,0.8);
+      margin: 0 auto 19px auto;
+      border-radius: 2px;
       opacity: 0.93;
     }
-    .card { 
-      background: #f7f8fa; 
-      border-radius:20px; 
-      box-shadow:0 14px 18px -8px rgba(83,89,100,0.13); 
-      padding:20px 18px 32px 18px; 
-      margin-bottom:30px; 
-      position:relative; 
+    .card {
+      background: #f7f8fa;
+      border-radius:20px;
+      box-shadow:0 14px 18px -8px rgba(83,89,100,0.13);
+      padding:20px 18px 32px 18px;
+      margin-bottom:30px;
+      position:relative;
     }
-    .text-box { 
-      margin-bottom: 36px; 
-      color: #222; 
-      line-height: 1.58; 
+    .text-box {
+      margin-bottom: 36px;
+      color: #222;
+      line-height: 1.58;
       font-size: 1rem;
     }
-    .question-title { 
-      font-size: 1.03rem; 
-      margin-bottom: 15px; 
-      color: #2a3e66; 
-      font-weight: 500; 
+    .question-title {
+      font-size: 1.03rem;
+      margin-bottom: 15px;
+      color: #2a3e66;
+      font-weight: 500;
     }
-    .choices { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 13px; 
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;          /* reduced gap by ~5% */
       margin-bottom: 7px;
     }
     .choice {
       display: block;
       font-size: 1rem;
-      padding: 15px 22px;
-      margin-bottom: 14px;
-      background: rgba(255,255,255,0.4);
+      padding: 11px 22px; /* reduced box height by 10% */
+      margin-bottom: 12px;/* reduced margin below each option */
+      background: rgba(220,222,225,0.45); /* increased grey intensity by ~5% */
       border-radius: 15px;
       border-left: 9px solid #FFA066;
       color: #222;
@@ -94,82 +94,82 @@
       border-radius: 10px 0 0 10px;
     }
     .choice:hover {
-      background: rgba(255,255,240,0.6);
+      background: rgba(220,222,225,0.75);
       color: #bd6732;
       border-left-color: #e96443;
     }
     .choice.selected {
-      background: rgba(194,248,180, 0.6);
+      background: rgba(194,248,180, 0.55);
       color: #275216;
       border-left-color: #93c560;
     }
     .choice.selected::before {
       background: #93c560;
     }
-    .highlighted { 
-      background: #93C560; 
-      color: #181c2e; 
-      border-radius: 4px; 
+    .highlighted {
+      background: #93C560;
+      color: #181c2e;
+      border-radius: 4px;
       padding: 0 2px;
     }
-    .feedback { 
-      margin-top: 8px; 
-      font-size: 1em; 
-      color: #c72c2c; 
-      min-height: 18px; 
+    .feedback {
+      margin-top: 8px;
+      font-size: 1em;
+      color: #c72c2c;
+      min-height: 18px;
     }
-    .card-actions { 
-      margin-top: 10px; 
-      display: flex; 
+    .card-actions {
+      margin-top: 10px;
+      display: flex;
       gap: 10px;
     }
-    .card-btn { 
-      background: #93C560; 
-      color: #fff; 
-      border: none; 
-      border-radius: 12px; 
-      font-size: 1em; 
-      padding: 8px 18px; 
-      cursor: pointer; 
+    .card-btn {
+      background: #93C560;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      padding: 8px 18px;
+      cursor: pointer;
       transition: background 0.13s;
     }
-    .card-btn:active { 
-      background: #bfd58e; 
+    .card-btn:active {
+      background: #bfd58e;
     }
-    .footer { 
-      background: #222; 
-      color:#fff; 
-      font-weight:600; 
-      max-width:670px; 
-      margin:0 auto; 
-      padding:13px 18px; 
-      text-align:center; 
-      font-size:1.13rem; 
-      position:fixed; 
-      left:50%; 
-      bottom:0; 
-      transform:translateX(-50%); 
-      width:90vw; 
-      border-radius: 18px 18px 0 0; 
-      z-index:15; 
+    .footer {
+      background: #222;
+      color:#fff;
+      font-weight:600;
+      max-width:670px;
+      margin:0 auto;
+      padding:13px 18px;
+      text-align:center;
+      font-size:1.13rem;
+      position:fixed;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      width:90vw;
+      border-radius: 18px 18px 0 0;
+      z-index:15;
       display:flex;
       align-items:center;
       justify-content:center;
     }
-    .footer-btn { 
-      background: none; 
-      color:#fff; 
-      border:none; 
-      font-size:1.05rem; 
-      font-weight:600; 
-      margin-left:18px; 
-      cursor:pointer; 
+    .footer-btn {
+      background: none;
+      color:#fff;
+      border:none;
+      font-size:1.05rem;
+      font-weight:600;
+      margin-left:18px;
+      cursor:pointer;
       display:flex;
       align-items:center;
     }
-    .footer-btn .arrow { 
-      font-size:1.45em; 
-      margin-right:7px; 
+    .footer-btn .arrow {
+      font-size:1.45em;
+      margin-right:7px;
     }
   </style>
 </head>
@@ -184,9 +184,7 @@ function getQueryParam(name) {
   let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
   return match && decodeURIComponent(match[1]);
 }
-
 let testId = getQueryParam('test');
-
 fetch("fetchfiles-reading-texts.json")
   .then(r=>r.json())
   .then(data=>{
@@ -205,7 +203,6 @@ fetch("fetchfiles-reading-texts.json")
     console.error(err);
     document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Error: " + err.message + "</h1></div>";
   });
-
 function renderCards(data) {
   let html = `
     <div class="container">
@@ -237,14 +234,11 @@ function renderCards(data) {
       <button class="footer-btn" onclick="window.location.href='index.html'"><span class="arrow">←</span> RETURN</button>
     </div>
   `;
-  
   document.getElementById('app').innerHTML = html;
-  
   // Add interactivity
   const correctAnswers = data.cards.map((card)=>String.fromCharCode(65+(card.answer || 0)));
   let scores = Array(data.cards.length).fill(0);
   let answered = Array(data.cards.length).fill(false);
-  
   document.querySelectorAll('.card').forEach((card,idx) => {
     card.querySelectorAll('.choice').forEach(choice => {
       choice.onclick = () => {
@@ -268,7 +262,6 @@ function renderCards(data) {
       };
     });
   });
-  
   window.showAnswer = function(idx) {
     let card = document.querySelector('.card[data-idx="'+idx+'"]');
     let correct = correctAnswers[idx];
@@ -281,7 +274,6 @@ function renderCards(data) {
     scores[idx]=1; answered[idx]=true;
     document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
   };
-  
   window.repeatQ = function(idx) {
     answered[idx]=false; scores[idx]=0;
     let card = document.querySelector('.card[data-idx="'+idx+'"]');
@@ -291,7 +283,6 @@ function renderCards(data) {
     card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
     document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
   };
-  
   window.nextQ = function(idx) {
     let nextCard = document.querySelector('.card[data-idx="'+(idx+1)+'"]');
     if(nextCard) nextCard.scrollIntoView({behavior:'smooth',block:'start'});
