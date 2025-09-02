@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cohesive Dynamic Reading Quiz</title>
+  <title>Cohesive Dynamic Quiz Example</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,500|Montserrat:400,500,700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -175,34 +175,29 @@
   </style>
 </head>
 <body>
+  <!-- Main quiz container where dynamic content loads -->
   <div id="app">
     <div style="text-align:center; color:#2442b0; margin-top:50px;">Loading quiz...</div>
   </div>
   <script>
     function getQueryParam(name) {
       let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
-      return match && decodeURIComponent(match[4]);
+      return match && decodeURIComponent(match[1]);
     }
     let manifestUrl = "fetchfiles-reading-texts.json";
+    let passageData = {};
     let testId = getQueryParam('test');
     fetch(manifestUrl)
       .then(r=>r.json())
       .then(data=>{
         let manifest = data.find(item=>item.id===testId);
-        if (!manifest) {
-          let listHtml = `<div class="container"><h1>Select a Reading Passage</h1><ul style="color:#2442b0; font-size:1.13em;">` +
-            data.map(item => 
-              `<li style="margin-bottom:12px;"><a style="color:#2442b0;text-decoration:underline;" href="?test=${item.id}">${item.title||item.id}${item.subtitle?(" — "+item.subtitle):""}</a></li>`
-            ).join("") +
-            `</ul></div>`;
-          document.getElementById('app').innerHTML = listHtml;
-          return;
-        }
+        if (!manifest) { document.getElementById('app').innerHTML = "<p>Test not found.</p>"; return;}
         return fetch(manifest.file).then(r=>r.json());
       })
       .then(data=>{
         if (!data) return;
-        renderCards(data);
+        passageData = data;
+        renderCards(passageData);
       });
     function renderCards(data) {
       let html = `
@@ -213,7 +208,7 @@
           ${data.cards.map((card,i)=>`
           <div class="card" data-idx="${i}">
             <div class="text-box">
-              ${card.text.replace(card.highlight ? card.highlight : '', card.highlight ? `<span id="ref-${i}">${card.highlight}</span>` : '')}
+              ${card.text.replace(card.highlight || '', card.highlight ? `<span id="ref-${i}">${card.highlight}</span>` : '')}
             </div>
             <div class="question-title">${card.question}</div>
             <div class="choices">
