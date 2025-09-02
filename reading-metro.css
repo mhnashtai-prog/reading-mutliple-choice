@@ -8,7 +8,6 @@ body {
   margin:0 auto;
   padding:20px 1vw 60px 1vw;
 }
-
 h1 {
   text-align: center;
   color: #fff;
@@ -19,9 +18,7 @@ h1 {
 
 /*** Enhanced Glassmorphic Cards ***/
 .card {
-  background: .card {
-  background: #EDE7EA; /* Slightly deeper pink-grey */
-}
+  background: #EDE7EA; /* Medium intensity pink-grey */
   backdrop-filter: blur(13px) saturate(1.2);
   border: 1.5px solid rgba(255,255,255,0.14);
   border-radius: 14px;
@@ -31,38 +28,31 @@ h1 {
   transition: all .22s ease;
   position: relative;
 }
-
 .card:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 30px -8px rgba(44,90,160,0.12), 0 2px 4px #eee8;
 }
-
 .text-box {
   margin-bottom: 16px;
   color: #222;
   line-height: 1.58;
   font-size: 1rem;
 }
-
 .question-title {
   font-size: 1.03rem;
   margin-bottom: 12px;
   color: #2442b0;
   font-weight: 500;
 }
-
 .choices {
   display: flex;
   flex-direction: column;
   gap: 3px;
   margin-bottom: 12px;
 }
-
 /*** Standardized Choice Box Styling ***/
 .choice {
-  background: .card {
-  background: #DBCDD2; /* Richer, warm pink-grey */
-}
+  background: #F7F6F7; /* Very pale pink-grey */
   font-size: 0.9rem;
   font-family: 'Inter', 'Montserrat', Arial, sans-serif;
   font-weight: 500;
@@ -83,8 +73,6 @@ h1 {
   align-items: center;
   white-space: normal;
   word-break: break-word;
-  
-  /* Enhanced mobile touch targets */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -93,44 +81,33 @@ h1 {
   -ms-user-select: none;
   user-select: none;
 }
-
 .choice::before {
   content: '';
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 5px;
-  background: .card {
   background: #DBCDD2; /* Richer, warm pink-grey */
-}
   border-radius: 8px 0 0 8px;
   z-index: 2;
   transition: background .17s;
 }
-
 .choice:hover {
   background: rgba(255,255,255,0.35);
   color: #784621;
   border-left-color: #e96443;
   transform: translateX(2px);
 }
-
 .choice.selected, .choice:active {
-  background: .card {
-  background: #DBCDD2; /* Richer, warm pink-grey */
-}
+  background: #EDE7EA;
   color: #274604;
   border-left-color: #bfff00;
   font-weight: 600;
   box-shadow: 0 4px 14px -2px #bfff0040;
   transform: translateX(3px);
 }
-
 .choice.selected::before, .choice:active::before {
-  background: .card {
-  background: #DBCDD2; /* Richer, warm pink-grey */
+  background: #EDE7EA;
 }
-}
-
 /*** Enhanced Text Highlighting ***/
 .highlighted, .highlight-target.highlighted {
   background: linear-gradient(90deg, #daff47 0%, #bfff00 80%) !important;
@@ -142,7 +119,6 @@ h1 {
   transition: all .2s;
   display: inline;
 }
-
 .feedback {
   margin-top: 8px;
   font-size: 0.95em;
@@ -150,7 +126,6 @@ h1 {
   min-height: 18px;
   font-weight: 500;
 }
-
 /*** Enhanced Button Styling ***/
 .card-actions {
   margin-top: 14px;
@@ -158,11 +133,8 @@ h1 {
   gap: 8px;
   flex-wrap: wrap;
 }
-
 .card-btn {
-  background: .card {
-  background: #EDE7EA; /* Slightly deeper pink-grey */
-}
+  background: #EDE7EA;
   color: #214e19;
   border: none;
   border-radius: 10px;
@@ -173,8 +145,6 @@ h1 {
   transition: all .15s ease;
   font-family: inherit;
   font-weight: 600;
-  
-  /* Enhanced touch targets */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -183,23 +153,16 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-
 .card-btn:hover {
-  background: .card {
-  background: #EDE7EA; /* Slightly deeper pink-grey */
-}
+  background: #DBCDD2;
   transform: translateY(-1px);
   box-shadow: 0 3px 8px rgba(191, 255, 0, 0.3);
 }
-
 .card-btn:active {
-  background: .card {
-  background: #EDE7EA; /* Slightly deeper pink-grey */
-}
+  background: #DBCDD2;
   transform: translateY(0);
   box-shadow: 0 1px 3px rgba(191, 255, 0, 0.4);
 }
-
 .card-btn:disabled {
   background: #cdecce;
   cursor: default;
@@ -207,7 +170,6 @@ h1 {
   transform: none;
   box-shadow: none;
 }
-
 /*** Standardized Metro Link Styling ***/
 .metro-label-link {
   display: block;
@@ -232,13 +194,10 @@ h1 {
   backdrop-filter: blur(8px) saturate(1.25);
   display: flex;
   align-items: center;
-  
-  /* Enhanced touch targets */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
-
 .metro-label-link::before {
   content: '';
   position: absolute;
@@ -249,14 +208,12 @@ h1 {
   z-index: 2;
   transition: background .17s;
 }
-
 .metro-label-link:hover {
   background: rgba(255,255,255,0.35);
   color: #784621;
   border-left-color: #e96443;
   transform: translateX(2px);
 }
-
 .metro-label-link.done {
   background: linear-gradient(90deg, #eaffba 0%, #bfff00 90%);
   color: #274604;
@@ -266,22 +223,18 @@ h1 {
   opacity: 0.9;
   transform: translateX(3px);
 }
-
 .metro-label-link.done::before {
   background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
 }
-
 .metro-label-link.active {
   border-left-color: #3C61E3;
   background: linear-gradient(120deg, rgba(60,97,227,0.25) 0%, rgba(182,246,255,0.20) 100%);
   color: #1d2c4d;
   transform: translateX(2px);
 }
-
 .metro-label-link.active::before {
   background: linear-gradient(210deg,#3C61E3 33%, #FFB66F 100%);
 }
-
 .metro-label-link.uc {
   background: linear-gradient(120deg, rgba(200,200,200,0.4) 0%, rgba(232,230,233,0.6) 100%);
   color: #999;
@@ -290,10 +243,8 @@ h1 {
   opacity: 0.7;
   pointer-events: none;
 }
-
 .metro-label-link { text-decoration: none; }
 .metro-label-link:visited { color: inherit; }
-
 #metroLabels {
   margin: 30px auto 0 auto;
   max-width: 640px;
@@ -325,7 +276,6 @@ h1 {
   justify-content: space-between;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
 }
-
 .footer-btn {
   background: none;
   color:#fff;
@@ -341,11 +291,9 @@ h1 {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-
 .footer-btn:hover {
   background: rgba(255,255,255,0.1);
 }
-
 .footer-btn .arrow { 
   font-size:1.1em; 
   margin-right:6px; 
@@ -373,7 +321,6 @@ h1 {
     padding: 8px 14px;
   }
 }
-
 @media (max-width:480px){
   #metroLabels, .container { 
     font-size: 0.91em; 
@@ -404,13 +351,10 @@ h1 {
     gap: 4px;
   }
 }
-
-/*** High DPI Display Optimizations ***/
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .choice, .metro-label-link {
     border-left-width: 4px;
   }
-  
   .choice::before, .metro-label-link::before {
     width: 4px;
   }
