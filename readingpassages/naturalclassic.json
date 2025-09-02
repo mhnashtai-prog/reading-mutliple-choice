@@ -1,0 +1,90 @@
+{
+  "title": "Natural Classic: The Golden Hawks",
+  "subtitle": "Martha Holmes, marine biologist, TV presenter and film producer, on the book that most influenced her.",
+  "cards": [
+    {
+      "text": "I'm a very keen reader, but selecting the book with a natural-history theme which has influenced me most was some challenge, until I thought back to my childhood. Then it was easy.",
+      "question": "When first asked to choose a book, Martha Holmes",
+      "choices": [
+        "was influenced by the experts.",
+        "chose one she had read recently.",
+        "had difficulty in making a decision.",
+        "was pleased to have been approached."
+      ],
+      "answer": 2,
+      "highlight": "was some challenge, until I thought back to my childhood"
+    },
+    {
+      "text": "Where the book came from is a mystery, and I have never met anyone who has heard of it. It is Rita Richie's The Golden Hawks of Genghis Khan.",
+      "question": "What does 'it' in line 9 refer to?",
+      "choices": [
+        "the choice",
+        "Martha's childhood",
+        "the book",
+        "the theme"
+      ],
+      "answer": 2,
+      "highlight": "It is Rita Richie's The Golden Hawks of Genghis Khan"
+    },
+    {
+      "text": "Set in 1218, it is a story of a rich boy whose parents are dead. He is growing up in the splendid city of Samarkand and has a fascination for hawks, those magnificent hunting birds.",
+      "question": "Martha says the book The Golden Hawks of Genghis Khan",
+      "choices": [
+        "was recommended by a friend.",
+        "was very popular when she was a child.",
+        "is known to very few people.",
+        "is one of many mystery books she has read."
+      ],
+      "answer": 2,
+      "highlight": "I have never met anyone who has heard of it."
+    },
+    {
+      "text": "There is a great deal of mystery surrounding his past, but he is led to believe that a band of Mongols killed his father to steal a rare type of bird—the golden hawk... Determined to get these birds back, he runs away from Samarkand and joins a group of people travelling in the country of Mongolia.",
+      "question": "The main interest of the hero of the book is",
+      "choices": [
+        "what happened to his parents.",
+        "the desire to see different countries.",
+        "the beauty of his homeland.",
+        "his passion for particular birds."
+      ],
+      "answer": 3,
+      "highlight": "has a fascination for hawks"
+    },
+    {
+      "text": "What follows is a grand adventure centred on the city of Karakorum, where the great Mongol chief Genghis Khan was then based.",
+      "question": "Where does most of the story take place?",
+      "choices": [
+        "in Samarkand",
+        "in Karakorum",
+        "on the way to Karakorum",
+        "in the Tian Shan mountains"
+      ],
+      "answer": 2,
+      "highlight": "a grand adventure centred on the city of Karakorum"
+    },
+    {
+      "text": "But most of all it was the sense of place that stayed with me. The book gives the reader an idea of the vast open spaces of central Asia and its huge skies, without the use of the long descriptive passages that would bore a child.",
+      "question": "What did Martha enjoy about the book?",
+      "choices": [
+        "the range of characters",
+        "the geographical setting",
+        "the descriptive writing",
+        "the changes of atmosphere"
+      ],
+      "answer": 1,
+      "highlight": "it was the sense of place that stayed with me... the vast open spaces"
+    },
+    {
+      "text": "The Mongols in The Golden Hawks were totally uninterested in possessions... Generosity, goodwill and optimism were highly valued, hard work was enjoyed and the rest was pure fun.",
+      "question": "What values did Martha learn from the book?",
+      "choices": [
+        "the importance of a sense of humour",
+        "how to be a successful traveller",
+        "the need to protect your goods",
+        "how to get the most out of life"
+      ],
+      "answer": 3,
+      "highlight": "Generosity, goodwill, and optimism were highly valued... They simply loved life."
+    }
+  ]
+}
