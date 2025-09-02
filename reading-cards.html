@@ -53,11 +53,9 @@ function getQueryParam(name) {
   let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
   return match && decodeURIComponent(match[1]);
 }
-
 let manifestUrl = "fetchfiles-reading-texts.json";
 let passageData = {};
 let testId = getQueryParam('test');
-
 // Load manifest first, then fetch passage data
 fetch(manifestUrl)
   .then(r=>r.json())
@@ -78,7 +76,6 @@ fetch(manifestUrl)
     console.error(err);
     document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Error loading test.</h1></div>";
   });
-
 function renderCards(data) {
   let html = `
     <div class="container">
@@ -111,12 +108,10 @@ function renderCards(data) {
     </div>
   `;
   document.getElementById('app').innerHTML = html;
-  
   // Initialize interactive functionality
   const correctAnswers = data.cards.map((card)=>String.fromCharCode(65+(card.answer || 0)));
   let scores = Array(data.cards.length).fill(0);
   let answered = Array(data.cards.length).fill(false);
-  
   document.querySelectorAll('.card').forEach((card,idx) => {
     card.querySelectorAll('.choice').forEach(choice => {
       choice.onclick = () => {
@@ -140,7 +135,6 @@ function renderCards(data) {
       };
     });
   });
-  
   // Global functions for buttons
   window.showAnswer = function(idx) {
     let card = document.querySelector('.card[data-idx="'+idx+'"]');
@@ -154,169 +148,6 @@ function renderCards(data) {
     scores[idx]=1; answered[idx]=true;
     document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
   };
-  
-  window.repeatQ = function(idx) {
-    answered[idx]=false; scores[idx]=0;
-    let card = document.querySelector('.card[data-idx="'+idx+'"]');
-    let ref = document.getElementById('ref-'+idx);
-    if (ref) ref.classList.remove('highlighted');
-    document.getElementById<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Reading Cards</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="reading-metro.css" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
-      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
-      margin:0;
-    }
-    .container { max-width:670px; margin:0 auto; padding:18px 2vw 110px 2vw; }
-    .title { margin-top: 14px; font-size: 2.08rem; color: #fff; font-family: 'Montserrat', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.09em; text-shadow: 0 3px 10px rgba(0,0,0,.12); margin-bottom: 7px; font-weight: 500; text-align: center;}
-    .subtitle {text-align:center; color:#f5a9ba; font-size:1.13rem; margin-top:3px; margin-bottom:22px;}
-    .divider { width: 46px; height: 2px; background: rgba(255,255,255,0.8); margin: 0 auto 19px auto; border-radius: 2px; opacity: 0.93;}
-    .card { background: #fffdfc; border-radius:20px; box-shadow:0 14px 18px -8px rgba(83,89,100,0.13),0 1.5px 8px -6px #637faa2d; padding:20px 18px 10px 18px; margin-bottom:30px; position:relative; }
-    .text-box { margin-bottom: 12px; color: #222; line-height: 1.58; font-size: 1rem;}
-    .highlighted { background: #93C560; color: #181c2e; border-radius: 4px; padding: 0 2px;}
-    .question-title { font-size: 1.03rem; margin-bottom: 10px; color: #2a3e66; font-weight: 500; }
-    .choices { display: flex; flex-direction: column; gap: 13px; margin-bottom: 7px;}
-    .choice {
-      background: linear-gradient(160deg, #fafcff 70%, #e9eaea 100%);
-      border-radius: 22px;
-      box-shadow:0 14px 20px -8px rgba(83,89,100,0.17),0 3px 14px -8px #637faa2d,-10px -10px 24px -3px rgba(255,255,255,0.90),0px -7px 14px -1px rgba(255,230,150,0.18),inset 2px 2px 6px rgba(255,255,255,0.39),inset -1px -1px 7px rgba(0,0,0,0.04);
-      border:1px solid #e6e7ea; color:#181c2e; font-size:1.15em; cursor:pointer; padding:13px 22px; transition:background 0.15s, box-shadow 0.16s, border 0.14s; text-align:left; user-select:none;
-    }
-    .choice.selected, .choice:active { background:#daf5b0; box-shadow:0px 18px 25px -10px rgba(60,210,89,0.13),0px 3px 13px 0 rgba(211,255,219,0.16),inset 1.5px 1.5px 3px rgba(255,255,255,0.17),inset -3px -3px 8px rgba(147,197,96,0.12); border:2px solid #93C560; color:#181c2e }
-    .feedback { margin-top: 8px; font-size: 1em; color: #c72c2c; min-height: 18px; }
-    .card-actions { margin-top: 10px; display: flex; gap: 10px;}
-    .card-btn { background: #93C560; color: #fff; border: none; border-radius: 12px; font-size: 1em; padding: 8px 18px; cursor: pointer; transition: background 0.13s; font-family: inherit;}
-    .card-btn:active { background: #bfd58e; }
-    .card-btn:disabled { background: #b8d3ea; cursor: default; opacity: 0.7; }
-    .footer { background: #222; color:#fff; font-weight:600; max-width:670px; margin:0 auto; padding:13px 20vw 13px 18px; text-align:center; font-size:1.13rem; position:fixed; left:50%; bottom:0; transform:translateX(-50%); width:99vw; border-radius: 18px 18px 0 0; z-index:15; display:flex;align-items:center;justify-content:center;}
-    .footer-btn { background: none; color:#fff; border:none; font-size:1.05rem; font-weight:600; margin-left:18px; margin-right:8px; cursor:pointer; display:flex;align-items:center;}
-    .footer-btn .arrow { font-size:1.45em; margin-right:7px; }
-    @media (max-width: 650px) {
-      .container{padding-left:0; padding-right:0;} .footer{max-width:99vw;}
-      .card{padding-left:2vw; padding-right:2vw;}
-    }
-    @media (max-width:480px) {
-      .card { padding: 13px 4px 6px 4px;}
-      .title { font-size:1.13rem;}
-      .footer{font-size: 0.99rem;}
-    }
-  </style>
-</head>
-<body>
-<div id="app"></div>
-<script>
-function getQueryParam(name) {
-  let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
-  return match && decodeURIComponent(match[1]);
-}
-
-let manifestUrl = "fetchfiles-reading-texts.json";
-let passageData = {};
-let testId = getQueryParam('test');
-
-// Load manifest first, then fetch passage data
-fetch(manifestUrl)
-  .then(r=>r.json())
-  .then(data=>{
-    let manifest = data.find(item=>item.id===testId);
-    if (!manifest) { 
-      document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Test not found.</h1></div>"; 
-      return;
-    }
-    return fetch(manifest.file).then(r=>r.json());
-  })
-  .then(data=>{
-    if (!data) return;
-    passageData = data;
-    renderCards(passageData);
-  })
-  .catch(err=>{
-    console.error(err);
-    document.getElementById('app').innerHTML = "<div class='container'><h1 style='color:white;text-align:center;'>Error loading test.</h1></div>";
-  });
-
-function renderCards(data) {
-  let html = `
-    <div class="container">
-      <div class="title">${data.title||''}</div>
-      <div class="subtitle">${data.subtitle||''}</div>
-      <div class="divider"></div>
-      ${data.cards.map((card,i)=>`
-      <div class="card" data-idx="${i}">
-        <div class="text-box">
-          ${card.text.replace(card.highlight, `<span id="ref-${i}">${card.highlight}</span>`)}
-        </div>
-        <div class="question-title">${card.question}</div>
-        <div class="choices">
-          ${card.choices.map((c,j)=>`
-            <div class="choice" data-answer="${String.fromCharCode(65+j)}">${String.fromCharCode(65+j)}. ${c}</div>
-          `).join("")}
-        </div>
-        <div class="feedback" id="feedback-${i}"></div>
-        <div class="card-actions">
-          <button class="card-btn" onclick="showAnswer(${i})">Show</button>
-          <button class="card-btn" onclick="repeatQ(${i})">Repeat</button>
-          ${i < data.cards.length-1 ? `<button class="card-btn" onclick="nextQ(${i})">Next</button>` : ""}
-        </div>
-      </div>
-      `).join("")}
-      <div class="footer" id="score-area">
-        <span style="margin-right:12px;">Score: <span id="score">0</span> / ${data.cards.length}</span>
-        <button class="footer-btn" onclick="window.location.href='index.html'"><span class="arrow">←</span> RETURN</button>
-      </div>
-    </div>
-  `;
-  document.getElementById('app').innerHTML = html;
-  
-  // Initialize interactive functionality
-  const correctAnswers = data.cards.map((card)=>String.fromCharCode(65+(card.answer || 0)));
-  let scores = Array(data.cards.length).fill(0);
-  let answered = Array(data.cards.length).fill(false);
-  
-  document.querySelectorAll('.card').forEach((card,idx) => {
-    card.querySelectorAll('.choice').forEach(choice => {
-      choice.onclick = () => {
-        if (answered[idx]) return;
-        card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
-        choice.classList.add('selected');
-        let val = choice.getAttribute('data-answer');
-        let ref = document.getElementById('ref-'+idx);
-        let fb = document.getElementById('feedback-'+idx);
-        if (val === correctAnswers[idx]) {
-          fb.textContent = "";
-          if (ref) ref.classList.add('highlighted');
-          scores[idx]=1;
-        } else {
-          fb.textContent = "There is no reference in the text.";
-          if (ref) ref.classList.remove('highlighted');
-          scores[idx]=0;
-        }
-        answered[idx]=true;
-        document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-      };
-    });
-  });
-  
-  // Global functions for buttons
-  window.showAnswer = function(idx) {
-    let card = document.querySelector('.card[data-idx="'+idx+'"]');
-    let correct = correctAnswers[idx];
-    card.querySelectorAll('.choice').forEach(c => {
-      if (c.getAttribute('data-answer')===correct) c.classList.add('selected');
-    });
-    let ref = document.getElementById('ref-'+idx);
-    if (ref) ref.classList.add('highlighted');
-    document.getElementById('feedback-'+idx).textContent = '';
-    scores[idx]=1; answered[idx]=true;
-    document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
-  };
-  
   window.repeatQ = function(idx) {
     answered[idx]=false; scores[idx]=0;
     let card = document.querySelector('.card[data-idx="'+idx+'"]');
@@ -326,15 +157,9 @@ function renderCards(data) {
     card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
     document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
   };
-  
   window.nextQ = function(idx) {
     let nextCard = document.querySelector('.card[data-idx="'+(idx+1)+'"]');
     if(nextCard) nextCard.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-}
-</script>
-</body>
-</html>
   };
 }
 </script>
