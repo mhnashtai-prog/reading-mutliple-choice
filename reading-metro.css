@@ -1,9 +1,41 @@
-.metro-label-link {
+body {
+  background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
+  font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+  margin:0;
+}
+.container {
+  max-width: 720px;
+  margin:0 auto;
+  padding:24px 1vw 70px 1vw;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size:2.25rem;
+  letter-spacing: 0.04em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+#metroMap {
+  display:block;
+  margin:38px auto 0 auto;
+  background: transparent;
+}
+#metroLabels {
+  margin: 38px auto 0 auto;
+  max-width: 640px;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+/* Metro menu option and answer card, unified design */
+.metro-label-link, .choice {
   display: block;
   font-size: 1.08rem;
   font-family: 'Montserrat', Arial, sans-serif;
-  padding: 14px 0 10px 22px;
-  margin-bottom: 9px;
+  padding: 15px 0 10px 22px;
+  margin-bottom: 14px;
   background: rgba(255,255,255,0.23);
   border-radius: 15px;
   border-left: 9px solid #FFA066;
@@ -16,9 +48,11 @@
   transition: background .13s, color .13s, border-left-color .18s;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  border: none;
 }
 
-.metro-label-link::before {
+.metro-label-link::before, .choice::before {
   content: '';
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -28,18 +62,18 @@
   z-index: 2;
   transition: background .17s;
 }
-.metro-label-link:hover {
+.metro-label-link:hover, .choice:hover {
   background: rgba(255,255,240,0.45);
   color: #bd6732;
   border-left-color: #e96443;
 }
 
-.metro-label-link.done {
+.metro-label-link.done, .choice.selected, .choice:active  {
   background: rgba(194,248,180, 0.44);
   color: #275216;
   border-left-color: #93c560;
 }
-.metro-label-link.done::before {
+.metro-label-link.done::before, .choice.selected::before, .choice:active::before {
   background: linear-gradient(210deg, #93c560 40%, #41e3ce 100%);
 }
 .metro-label-link.active {
@@ -49,3 +83,46 @@
 .metro-label-link.active::before {
   background: linear-gradient(210deg,#3C61E3 33%, #FFB66F 100%);
 }
+
+/* For SVG map nodes */
+svg .metro-node {
+  transition: fill 0.18s, stroke 0.18s;
+}
+svg .metro-node:hover {
+  fill:#fffcb8;
+  stroke:#FFA066;
+  filter: drop-shadow(0 1px 8px #ffe6aa);
+}
+svg text.tick {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size:34px;
+  font-weight: bold;
+  fill:#46b742;
+}
+
+/* Feedback and highlight in reader */
+.highlighted { background: #93C560; color: #181c2e; border-radius: 4px; padding: 0 2px;}
+.feedback { margin-top: 8px; font-size: 1em; color: #c72c2c; min-height: 18px; }
+
+.card-actions { margin-top: 10px; display: flex; gap: 10px;}
+.card-btn { background: #93C560; color: #fff; border: none; border-radius: 12px; font-size: 1em; padding: 8px 18px; cursor: pointer; transition: background 0.13s; font-family: inherit;}
+.card-btn:active { background: #bfd58e; }
+.card-btn:disabled { background: #b8d3ea; cursor: default; opacity: 0.7; }
+
+.footer { background: #222; color:#fff; font-weight:600; max-width:670px; margin:0 auto; padding:13px 20vw 13px 18px; text-align:center; font-size:1.13rem; position:fixed; left:50%; bottom:0; transform:translateX(-50%); width:99vw; border-radius: 18px 18px 0 0; z-index:15; display:flex;align-items:center;justify-content:center;}
+.footer-btn { background: none; color:#fff; border:none; font-size:1.05rem; font-weight:600; margin-left:18px; margin-right:8px; cursor:pointer; display:flex;align-items:center;}
+.footer-btn .arrow { font-size:1.45em; margin-right:7px; }
+
+@media (max-width:700px){
+  #metroMap {width:95vw;height:38vw;}
+  .footer {font-size: 0.99rem;}
+}
+@media (max-width:440px){
+  #metroLabels, .container {font-size:0.99em;margin-top:28px;}
+  h1{font-size:1.2em;}
+  .footer{font-size: 0.95rem;}
+}
+
+/* Remove link underline for menu labels */
+.metro-label-link { text-decoration: none; }
+.metro-label-link:visited { color: inherit; }
