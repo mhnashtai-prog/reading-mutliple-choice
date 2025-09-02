@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cohesive ABCD Quiz Example</title>
+  <title>Cohesive Dynamic Reading Quiz</title>
   <link href="https://fonts.googleapis.com/css?family=Inter:400,500|Montserrat:400,500,700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -92,6 +92,77 @@
       z-index: 2;
       transition: background .17s;
     }
+    .highlighted {
+      background: #daff47;
+      color: #16390e;
+      border-radius: 2px;
+      padding: 0 2px;
+      font-weight: 600;
+    }
+    .feedback {
+      margin-top: 2px;
+      font-size: 0.91em;
+      color: #c72c2c;
+      min-height: 10px;
+    }
+    .card-actions {
+      margin-top: 3px;
+      display: flex;
+      gap: 7px;
+    }
+    .card-btn {
+      background: #bfff00;
+      color: #214e19;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.86em;
+      padding: 6px 11px;
+      cursor: pointer;
+      box-shadow: 0 0.5px 2px #ddeedd;
+      transition: background 0.13s;
+      font-family: inherit;
+    }
+    .card-btn:active {
+      background: #c8fa5e;
+    }
+    .card-btn:disabled {
+      background: #cdecce;
+      cursor: default;
+      opacity: 0.7;
+    }
+    .footer {
+      background: #222;
+      color:#fff;
+      font-weight:600;
+      max-width:670px;
+      margin:0 auto;
+      padding:7px 7vw 7px 9px;
+      text-align:center;
+      font-size:1.01rem;
+      position:fixed;
+      left:50%;
+      bottom:0;
+      transform:translateX(-50%);
+      width:97vw;
+      border-radius: 12px 12px 0 0;
+      z-index:15;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .footer-btn {
+      background: none;
+      color:#fff;
+      border:none;
+      font-size:0.94rem;
+      font-weight:600;
+      margin-left:10px;
+      margin-right:4px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+    }
+    .footer-btn .arrow { font-size:1.08em; margin-right:7px; }
     @media (max-width:700px){
       .container { padding: 5px 2vw 35px 2vw; }
       .choice { font-size: 0.67rem; padding: 2px 6px 2px 5px; }
@@ -104,113 +175,120 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Sample Quiz – Cohesive Design</h1>
-
-    <div class="card">
-      <div class="text-box">
-        1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        2. Quisque tincidunt elit vel turpis euismod, eu placerat massa laoreet.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        3. Suspendisse potenti. Duis rutrum justo ac urna mattis auctor.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        4. Pellentesque habitant morbi tristique senectus et netus et malesuada.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        5. Aliquam erat volutpat. Cras non diam vitae eros pretium eleifend.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        6. Mauris et sodales mauris, vitae suscipit velit. Etiam ac consequat enim.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        7. Nam vestibulum, enim et cursus tincidunt, odio erat porta diam.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="text-box">
-        8. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.
-      </div>
-      <div class="question-title">Select the correct answer:</div>
-      <div class="choices">
-        <div class="choice">A</div>
-        <div class="choice">B</div>
-        <div class="choice">C</div>
-        <div class="choice">D</div>
-      </div>
-    </div>
-
+  <div id="app">
+    <div style="text-align:center; color:#2442b0; margin-top:50px;">Loading quiz...</div>
   </div>
+  <script>
+    function getQueryParam(name) {
+      let match = location.search.match(new RegExp("[?&]"+name+"=([^&]*)"));
+      return match && decodeURIComponent(match[4]);
+    }
+    let manifestUrl = "fetchfiles-reading-texts.json";
+    let testId = getQueryParam('test');
+    fetch(manifestUrl)
+      .then(r=>r.json())
+      .then(data=>{
+        let manifest = data.find(item=>item.id===testId);
+        if (!manifest) {
+          let listHtml = `<div class="container"><h1>Select a Reading Passage</h1><ul style="color:#2442b0; font-size:1.13em;">` +
+            data.map(item => 
+              `<li style="margin-bottom:12px;"><a style="color:#2442b0;text-decoration:underline;" href="?test=${item.id}">${item.title||item.id}${item.subtitle?(" — "+item.subtitle):""}</a></li>`
+            ).join("") +
+            `</ul></div>`;
+          document.getElementById('app').innerHTML = listHtml;
+          return;
+        }
+        return fetch(manifest.file).then(r=>r.json());
+      })
+      .then(data=>{
+        if (!data) return;
+        renderCards(data);
+      });
+    function renderCards(data) {
+      let html = `
+        <div class="container">
+          <h1>${data.title||''}</h1>
+          <div class="subtitle">${data.subtitle||''}</div>
+          <div class="divider"></div>
+          ${data.cards.map((card,i)=>`
+          <div class="card" data-idx="${i}">
+            <div class="text-box">
+              ${card.text.replace(card.highlight ? card.highlight : '', card.highlight ? `<span id="ref-${i}">${card.highlight}</span>` : '')}
+            </div>
+            <div class="question-title">${card.question}</div>
+            <div class="choices">
+              ${card.choices.map((c,j)=>`
+                <div class="choice" data-answer="${String.fromCharCode(65+j)}">${String.fromCharCode(65+j)}. ${c}</div>
+              `).join("")}
+            </div>
+            <div class="feedback" id="feedback-${i}"></div>
+            <div class="card-actions">
+              <button class="card-btn" onclick="showAnswer(${i})">Show</button>
+              <button class="card-btn" onclick="repeatQ(${i})">Repeat</button>
+              ${i < data.cards.length-1 ? `<button class="card-btn" onclick="nextQ(${i})">Next</button>` : ""}
+            </div>
+          </div>
+          `).join("")}
+          <div class="footer" id="score-area">
+            <span style="margin-right:12px;">Score: <span id="score">0</span> / ${data.cards.length}</span>
+            <button class="footer-btn" onclick="window.location.href='index.html'"><span class="arrow">←</span> RETURN</button>
+          </div>
+        </div>
+        <script>
+          const correctAnswers = [${data.cards.map((card)=>`"${String.fromCharCode(65+(card.answer || 0))}"`).join(",")}];
+          let scores = Array(${data.cards.length}).fill(0), answered = Array(${data.cards.length}).fill(false);
+          document.querySelectorAll('.card').forEach((card,idx) => {
+            card.querySelectorAll('.choice').forEach(choice => {
+              choice.onclick = () => {
+                if (answered[idx]) return;
+                card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+                choice.classList.add('selected');
+                let val = choice.getAttribute('data-answer');
+                let ref = document.getElementById('ref-'+idx);
+                let fb = document.getElementById('feedback-'+idx);
+                if (val === correctAnswers[idx]) {
+                  fb.textContent = "";
+                  if (ref) ref.classList.add('highlighted');
+                  scores[idx]=1;
+                } else {
+                  fb.textContent = "There is no reference in the text.";
+                  if (ref) ref.classList.remove('highlighted');
+                  scores[idx]=0;
+                }
+                answered[idx]=true;
+                document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
+              };
+            });
+          });
+          window.showAnswer = function(idx) {
+            let card = document.querySelector('.card[data-idx="'+idx+'"]');
+            let correct = correctAnswers[idx];
+            card.querySelectorAll('.choice').forEach(c => {
+              if (c.getAttribute('data-answer')===correct) c.classList.add('selected');
+            });
+            let ref = document.getElementById('ref-'+idx);
+            if (ref) ref.classList.add('highlighted');
+            document.getElementById('feedback-'+idx).textContent = '';
+            scores[idx]=1; answered[idx]=true;
+            document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
+          };
+          window.repeatQ = function(idx) {
+            answered[idx]=false; scores[idx]=0;
+            let card = document.querySelector('.card[data-idx="'+idx+'"]');
+            let ref = document.getElementById('ref-'+idx);
+            if (ref) ref.classList.remove('highlighted');
+            document.getElementById('feedback-'+idx).textContent = '';
+            card.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
+            document.getElementById('score').textContent=scores.reduce((a,b)=>a+b,0);
+          };
+          window.nextQ = function(idx) {
+            let nextCard = document.querySelector('.card[data-idx="'+(idx+1)+'"]');
+            if(nextCard) nextCard.scrollIntoView({behavior:'smooth',block:'start'});
+          };
+        <\/script>
+      `;
+      document.getElementById('app').innerHTML = html;
+    }
+  </script>
 </body>
 </html>
