@@ -32,10 +32,18 @@
       transition: background 0.14s;
       cursor: pointer;
     }
-    .metro-label-link.done { background: #daf5b0; color:#222; border-left:6px solid #46b742; text-decoration: line-through; opacity: 0.8; }
+    .metro-label-link.done { background: #daf5b0; color:#222; border-left:6px solid #46b742; text-decoration: line-through; opacity: 0.85; }
+    .metro-label-link.uc {
+      background: #e8e6e9;
+      color: #999;
+      border-left: 6px solid #CBB299;
+      cursor: not-allowed;
+      opacity: 0.82;
+      pointer-events: none;
+    }
     .metro-label-link:hover { background: #fffcb8;}
     #metroMap { display:block; margin:38px auto 0 auto; }
-    @media (max-width:700px){#metroMap {width:95vw;height:34vw;}}
+    @media (max-width:700px){#metroMap {width:95vw;height:36vw;}}
     @media (max-width:440px){
       #metroLabels{font-size:0.99em;margin-top:28px;}
       h1{font-size:1.2em;}
@@ -46,33 +54,49 @@
   <div class="container">
     <h1>Reading Metro Map</h1>
     <svg id="metroMap" width="650" height="260" viewBox="0 0 650 230">
-      <polyline points="60,200 170,150 290,120 410,130 530,70 600,120" fill="none" stroke="#FFA066" stroke-width="8"/>
+      <polyline points="60,200 170,150 290,120 410,130 530,70 600,120 650,80 720,140 800,110 870,160 950,125 1010,140"
+      fill="none" stroke="#FFA066" stroke-width="8"/>
     </svg>
     <div id="metroLabels"></div>
   </div>
   <script>
-    // Load passage data from your JSON manifest so it stays in sync
+    // Helper for progress tracking
+    function getReadingProgress() {
+      try { return JSON.parse(localStorage.getItem("readingMetroProgress") || "{}"); } catch { return {}; }
+    }
+
     fetch("fetchfiles-reading-texts.json")
       .then(response => response.json())
       .then(passages => {
-        // Metro stop coordinates (edit or expand to fit number of passages)
+        // Enough stops for 12 passages
         const stops = [
-          {x:60,y:200},{x:170,y:150},{x:290,y:120},{x:410,y:130},{x:530,y:70},{x:600,y:120}
+          {x:60, y:200},{x:130, y:170},{x:200, y:150},{x:270, y:125},{x:350, y:105},{x:430, y:93},
+          {x:500, y:117},{x:570, y:97},{x:640, y:110},{x:710, y:140},{x:780, y:112},{x:850, y:145}
         ];
         const svg = document.getElementById("metroMap");
         const metroLabels = document.getElementById("metroLabels");
-        const progress = JSON.parse(localStorage.getItem("readingMetroProgress")||"{}");
+        const progress = getReadingProgress();
+
         passages.forEach((p,i)=>{
+          const underConstruction = (p.title||"").toLowerCase().includes("under construction");
           let pos = stops[i]||{x:100+90*i, y:220-19*i};
-          // Draw node
+          // SVG Stop Node
           let circ = document.createElementNS("http://www.w3.org/2000/svg","circle");
-          circ.setAttribute("cx",pos.x); circ.setAttribute("cy",pos.y); circ.setAttribute("r",27);
-          circ.setAttribute("stroke","#FFA066"); circ.setAttribute("stroke-width","7");
-          circ.setAttribute("fill", progress[p.id] ? "#daf5b0" : "#fff");
-          circ.style.cursor = "pointer";
-          circ.addEventListener('click',()=>window.location.href=`reading-cards.html?test=${p.id}`);
+          circ.setAttribute("cx",pos.x);
+          circ.setAttribute("cy",pos.y);
+          circ.setAttribute("r",27);
+          circ.setAttribute("stroke","#FFA066");
+          circ.setAttribute("stroke-width","7");
+          circ.setAttribute("fill",
+            progress[p.id] ? "#daf5b0" :
+            underConstruction ? "#eee6" : "#fff"
+          );
+          circ.style.cursor = underConstruction ? "not-allowed" : "pointer";
+          if (!underConstruction) {
+            circ.addEventListener('click',()=>window.location.href=`reading-cards.html?test=${p.id}`);
+          }
           svg.appendChild(circ);
-          // Draw tick if completed
+          // SVG Tick
           if(progress[p.id]){
             let tick = document.createElementNS("http://www.w3.org/2000/svg","text");
             tick.setAttribute("x",pos.x-15); tick.setAttribute("y",pos.y+15);
@@ -81,12 +105,17 @@
             tick.textContent = "✓";
             svg.appendChild(tick);
           }
-          // Add clickable text labels below SVG
-          let a = document.createElement("a");
-          a.textContent = ` ${i+1}. ${p.title}`;
-          a.className = "metro-label-link" + (progress[p.id]?" done":"");
-          a.href = `reading-cards.html?test=${p.id}`;
-          // you can optionally mark progress here on click
+          // Metro list label
+          let a = document.createElement("span");
+          a.textContent = ` ${i+1}. ${p.title}` +
+            (underConstruction ? " (Coming Soon)" : "");
+          a.className = "metro-label-link" +
+            (progress[p.id] ? " done" : "") +
+            (underConstruction ? " uc" : "");
+          if (!underConstruction) {
+            a.tabIndex = 0;
+            a.onclick = ()=>window.location.href=`reading-cards.html?test=${p.id}`;
+          }
           metroLabels.appendChild(a);
         });
       });
