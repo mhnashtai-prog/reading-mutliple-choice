@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,186 +10,227 @@
     body {
       background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-      margin:0;
+      margin: 0;
+      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
-    .container { max-width: 720px; margin:0 auto; padding:24px 1vw 70px 1vw;}
+    
+    .container { 
+      max-width: 720px; 
+      margin: 0 auto; 
+      padding: 24px 1vw 70px 1vw;
+    }
+    
+    .header-section {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
     h1 {
-      text-align: center; 
       color: #fff; 
       font-size: 1.75rem; 
       font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: -0.02em;
-      line-height: 0.9;
-      margin: 0 0 16px 0;
+      line-height: 1.1;
+      margin: 0 0 12px 0;
       text-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+    
     .subtitle {
-      text-align: center; 
       color: rgba(255,255,255,0.95); 
-      font-size: 1.6rem; 
+      font-size: 1.4rem; 
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       font-weight: 500;
       letter-spacing: 0.01em;
-      margin: 0 0 8px 0;
+      margin: 0 0 6px 0;
     }
+    
     .test-count {
-      text-align: center; 
       color: rgba(255,255,255,0.85); 
-      font-size: 1.3rem; 
+      font-size: 1.1rem; 
       font-family: 'Outfit', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin: 0 0 12px 0;
+      margin: 0 0 8px 0;
     }
+    
     .intuity-credit {
-      text-align: center; 
       color: rgba(255,255,255,0.7); 
-      font-size: 0.95rem; 
+      font-size: 0.9rem; 
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       font-weight: 400;
       font-style: normal; 
       letter-spacing: 0.02em;
-      margin: 0 0 30px 0;
+      margin: 0 0 20px 0;
     }
+    
     #metroLabels {
-      margin: 38px auto 0 auto;
+      margin: 0 auto;
       max-width: 640px;
-      display:flex; flex-direction:column; gap:7px;
+      display: flex; 
+      flex-direction: column; 
+      gap: 3px;
     }
-    .metro-label-link {
-      font-size: 1.1rem;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      line-height: 1.4;
-      padding: 12px 0 12px 16px;
-      background: rgba(255,255,255,0.92);
-      border-radius: 14px;
-      margin-bottom: 3px;
-      text-decoration: none;
-      color: #1a1a1a;
-      border-left: 5px solid #FFA066;
-      display: inline-block;
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
+    
+    .progress-summary {
+      background: rgba(255,255,255,0.1);
       backdrop-filter: blur(20px);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .metro-label-link.done { 
-      background: linear-gradient(135deg, #daf5b0 0%, #c8f0a0 100%); 
-      color: #2d5016; 
-      border-left: 5px solid #46b742; 
-      font-weight: 700;
-      text-decoration: none;
-      opacity: 1;
-      box-shadow: 0 3px 12px rgba(70,183,66,0.2);
-    }
-    .metro-label-link.uc {
-      background: linear-gradient(135deg, #e8e6e9 0%, #f0f0f0 100%);
-      color: #999;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
       font-weight: 500;
-      border-left: 5px solid #CBB299;
-      cursor: not-allowed;
-      opacity: 0.75;
-      pointer-events: none;
+      border: 1px solid rgba(255,255,255,0.1);
     }
-    .metro-label-link:hover { 
-      background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, #fffef8 100%);
-      transform: translateX(2px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    
+    .progress-bar {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      height: 6px;
+      margin-top: 8px;
+      overflow: hidden;
     }
-    #metroMap { display:block; margin:38px auto 0 auto; }
-    @media (max-width:700px){
-      #metroMap {width:95vw;height:36vw;}
-      h1 {font-size:1.5rem;}
-      .subtitle {font-size:1.4rem;}
-      .test-count {font-size:1.1rem;}
-      .metro-label-link {font-size:1rem; padding:10px 0 10px 14px;}
+    
+    .progress-fill {
+      background: linear-gradient(90deg, #bfff00 0%, #8cffda 100%);
+      height: 100%;
+      border-radius: 20px;
+      transition: width 0.5s ease;
     }
-    @media (max-width:440px){
-      #metroLabels{font-size:0.99em;margin-top:28px;}
-      h1{font-size:1.3rem; line-height:1;}
-      .subtitle {font-size:1.2rem;}
-      .test-count {font-size:1rem;}
-      .metro-label-link {font-size:0.95rem; padding:8px 0 8px 12px;}
+
+    /* Mobile Optimizations */
+    @media (max-width: 700px) {
+      h1 { font-size: 1.5rem; }
+      .subtitle { font-size: 1.2rem; }
+      .test-count { font-size: 1rem; }
+      .intuity-credit { font-size: 0.85rem; }
+    }
+    
+    @media (max-width: 440px) {
+      .container { padding: 20px 4vw 60px 4vw; }
+      h1 { font-size: 1.3rem; line-height: 1.2; }
+      .subtitle { font-size: 1.1rem; }
+      .test-count { font-size: 0.9rem; }
+      .intuity-credit { font-size: 0.8rem; }
+      #metroLabels { gap: 2px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Reading Comprehension</h1>
-    <div class="subtitle">Multiple Choice</div>
-    <div class="test-count">12 Tests</div>
-    <div class="intuity-credit">INTUITY by Majid Nashtai</div>
-    <svg id="metroMap" width="650" height="260" viewBox="0 0 650 230">
-    </svg>
+    <div class="header-section">
+      <h1>Reading Comprehension</h1>
+      <div class="subtitle">Multiple Choice</div>
+      <div class="test-count">12 Tests</div>
+      <div class="intuity-credit">INTUITY by Majid Nashtai</div>
+      
+      <div class="progress-summary" id="progressSummary">
+        <div>Progress: <span id="completedCount">0</span> of 12 tests completed</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+    
     <div id="metroLabels"></div>
   </div>
+
   <script>
     // Helper for progress tracking
     function getReadingProgress() {
-      try { return JSON.parse(localStorage.getItem("readingMetroProgress") || "{}"); } catch { return {}; }
+      try { 
+        return JSON.parse(localStorage.getItem("readingMetroProgress") || "{}"); 
+      } catch { 
+        return {}; 
+      }
+    }
+
+    // Update progress summary
+    function updateProgressSummary(totalCompleted, totalTests) {
+      const progressPercent = Math.round((totalCompleted / totalTests) * 100);
+      document.getElementById('completedCount').textContent = totalCompleted;
+      document.getElementById('progressFill').style.width = `${progressPercent}%`;
+      
+      const summary = document.getElementById('progressSummary');
+      if (totalCompleted === totalTests) {
+        summary.style.background = 'linear-gradient(135deg, rgba(191,255,0,0.2) 0%, rgba(140,255,218,0.2) 100%)';
+        summary.style.border = '1px solid rgba(191,255,0,0.3)';
+      }
+    }
+
+    // Enhanced animation for staggered loading
+    function animateElements() {
+      const links = document.querySelectorAll('.metro-label-link');
+      links.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          link.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+          link.style.opacity = '1';
+          link.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
     }
 
     fetch("fetchfiles-reading-texts.json")
       .then(response => response.json())
       .then(passages => {
-        // Enough stops for 12 passages
-        const stops = [
-          {x:60, y:200},{x:130, y:170},{x:200, y:150},{x:270, y:125},{x:350, y:105},{x:430, y:93},
-          {x:500, y:117},{x:570, y:97},{x:640, y:110},{x:710, y:140},{x:780, y:112},{x:850, y:145}
-        ];
-        const svg = document.getElementById("metroMap");
         const metroLabels = document.getElementById("metroLabels");
         const progress = getReadingProgress();
+        let completedCount = 0;
 
-        passages.forEach((p,i)=>{
-          const underConstruction = (p.title||"").toLowerCase().includes("under construction");
-          let pos = stops[i]||{x:100+90*i, y:220-19*i};
-          // SVG Stop Node
-          let circ = document.createElementNS("http://www.w3.org/2000/svg","circle");
-          circ.setAttribute("cx",pos.x);
-          circ.setAttribute("cy",pos.y);
-          circ.setAttribute("r",27);
-          circ.setAttribute("stroke","#FFA066");
-          circ.setAttribute("stroke-width","7");
-          circ.setAttribute("fill",
-            progress[p.id] ? "#daf5b0" :
-            underConstruction ? "#eee6" : "#fff"
-          );
-          circ.style.cursor = underConstruction ? "not-allowed" : "pointer";
-          if (!underConstruction) {
-            circ.addEventListener('click',()=>window.location.href=`reading-cards.html?test=${p.id}`);
-          }
-          svg.appendChild(circ);
-          // SVG Tick
-          if(progress[p.id]){
-            let tick = document.createElementNS("http://www.w3.org/2000/svg","text");
-            tick.setAttribute("x",pos.x-15); tick.setAttribute("y",pos.y+15);
-            tick.setAttribute("font-size","34"); tick.setAttribute("font-weight","bold");
-            tick.setAttribute("fill","#46b742");
-            tick.textContent = "✓";
-            svg.appendChild(tick);
-          }
-          // Metro list label
-          let a = document.createElement("span");
-          a.textContent = ` ${i+1}. ${p.title}` +
-            (underConstruction ? " (Coming Soon)" : "");
-          a.className = "metro-label-link" +
-            (progress[p.id] ? " done" : "") +
-            (underConstruction ? " uc" : "");
-          if (!underConstruction) {
-            a.tabIndex = 0;
-            a.onclick = ()=>window.location.href=`reading-cards.html?test=${p.id}`;
-          }
-          metroLabels.appendChild(a);
+        passages.forEach((p, i) => {
+          const underConstruction = (p.title || "").toLowerCase().includes("under construction");
+          const isCompleted = progress[p.id];
+          if (isCompleted) completedCount++;
+
+          // Create metro link element
+          let linkContainer = document.createElement("div");
+          linkContainer.innerHTML = `
+            <span class="metro-label-link${isCompleted ? ' done' : ''}${underConstruction ? ' uc' : ''}" 
+                  ${!underConstruction ? `onclick="window.location.href='reading-cards.html?test=${p.id}'"` : ''} 
+                  tabindex="${underConstruction ? '-1' : '0'}">
+              ${i + 1}. ${p.title}${underConstruction ? " (Coming Soon)" : ""}
+              ${isCompleted ? '<span class="metro-progress-indicator">✓</span>' : ''}
+            </span>
+          `;
+          
+          metroLabels.appendChild(linkContainer.firstElementChild);
         });
+
+        // Update progress summary
+        updateProgressSummary(completedCount, passages.length);
+        
+        // Animate elements
+        setTimeout(animateElements, 100);
+      })
+      .catch(error => {
+        console.error('Error loading passages:', error);
+        document.getElementById('metroLabels').innerHTML = 
+          '<div style="color: rgba(255,255,255,0.8); text-align: center; padding: 20px;">Error loading tests. Please refresh the page.</div>';
       });
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      const focusedElement = document.activeElement;
+      if (focusedElement && focusedElement.classList.contains('metro-label-link')) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          focusedElement.click();
+        }
+      }
+    });
+
+    // Add smooth scrolling for mobile navigation
+    if ('scrollBehavior' in document.documentElement.style) {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
   </script>
 </body>
 </html>
