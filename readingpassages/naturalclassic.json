@@ -1,90 +1,90 @@
 {
-  "title": "Natural Classic: The Golden Hawks",
-  "subtitle": "Martha Holmes, marine biologist, TV presenter and film producer, on the book that most influenced her.",
+  "title": "The Memory Palace: Ancient Techniques Meet Modern Science",
+  "subtitle": "Exploring how traditional mnemonic methods align with contemporary understanding of the brain.",
   "cards": [
     {
-      "text": "I'm a very keen reader, but selecting the book with a natural-history theme which has influenced me most was some challenge, until I thought back to my childhood. Then it was easy.",
-      "question": "When first asked to choose a book, Martha Holmes",
+      "text": "The method of loci, commonly known as the 'memory palace' technique, was developed by ancient Greek and Roman orators who needed to deliver lengthy speeches without written notes. This technique involves associating information with specific locations in a familiar building or route.",
+      "question": "Who originally developed the memory palace technique?",
       "choices": [
-        "was influenced by the experts.",
-        "chose one she had read recently.",
-        "had difficulty in making a decision.",
-        "was pleased to have been approached."
+        "medieval scholars",
+        "Renaissance artists",
+        "ancient Greek and Roman orators",
+        "modern psychologists"
       ],
       "answer": 2,
-      "highlight": "was some challenge, until I thought back to my childhood"
+      "highlight": "developed by ancient Greek and Roman orators"
     },
     {
-      "text": "Where the book came from is a mystery, and I have never met anyone who has heard of it. It is Rita Richie's The Golden Hawks of Genghis Khan.",
-      "question": "What does 'it' in line 9 refer to?",
+      "text": "Modern neuroscience has validated what ancient practitioners discovered through experience: spatial memory is one of the brain's most robust systems. The hippocampus, crucial for both spatial navigation and memory formation, shows heightened activity when people use location-based memory techniques.",
+      "question": "What brain structure is crucial for both spatial navigation and memory?",
       "choices": [
-        "the choice",
-        "Martha's childhood",
-        "the book",
-        "the theme"
-      ],
-      "answer": 2,
-      "highlight": "It is Rita Richie's The Golden Hawks of Genghis Khan"
-    },
-    {
-      "text": "Set in 1218, it is a story of a rich boy whose parents are dead. He is growing up in the splendid city of Samarkand and has a fascination for hawks, those magnificent hunting birds.",
-      "question": "Martha says the book The Golden Hawks of Genghis Khan",
-      "choices": [
-        "was recommended by a friend.",
-        "was very popular when she was a child.",
-        "is known to very few people.",
-        "is one of many mystery books she has read."
-      ],
-      "answer": 2,
-      "highlight": "I have never met anyone who has heard of it."
-    },
-    {
-      "text": "There is a great deal of mystery surrounding his past, but he is led to believe that a band of Mongols killed his father to steal a rare type of bird—the golden hawk... Determined to get these birds back, he runs away from Samarkand and joins a group of people travelling in the country of Mongolia.",
-      "question": "The main interest of the hero of the book is",
-      "choices": [
-        "what happened to his parents.",
-        "the desire to see different countries.",
-        "the beauty of his homeland.",
-        "his passion for particular birds."
-      ],
-      "answer": 3,
-      "highlight": "has a fascination for hawks"
-    },
-    {
-      "text": "What follows is a grand adventure centred on the city of Karakorum, where the great Mongol chief Genghis Khan was then based.",
-      "question": "Where does most of the story take place?",
-      "choices": [
-        "in Samarkand",
-        "in Karakorum",
-        "on the way to Karakorum",
-        "in the Tian Shan mountains"
-      ],
-      "answer": 2,
-      "highlight": "a grand adventure centred on the city of Karakorum"
-    },
-    {
-      "text": "But most of all it was the sense of place that stayed with me. The book gives the reader an idea of the vast open spaces of central Asia and its huge skies, without the use of the long descriptive passages that would bore a child.",
-      "question": "What did Martha enjoy about the book?",
-      "choices": [
-        "the range of characters",
-        "the geographical setting",
-        "the descriptive writing",
-        "the changes of atmosphere"
+        "the cerebellum",
+        "the hippocampus",
+        "the frontal cortex",
+        "the temporal lobe"
       ],
       "answer": 1,
-      "highlight": "it was the sense of place that stayed with me... the vast open spaces"
+      "highlight": "The hippocampus, crucial for both spatial navigation and memory formation"
     },
     {
-      "text": "The Mongols in The Golden Hawks were totally uninterested in possessions... Generosity, goodwill and optimism were highly valued, hard work was enjoyed and the rest was pure fun.",
-      "question": "What values did Martha learn from the book?",
+      "text": "Memory champions, individuals who compete in memorization contests, routinely use these ancient techniques to perform seemingly impossible feats. Some can memorize the order of multiple shuffled card decks in under an hour, demonstrating the extraordinary potential of trained human memory.",
+      "question": "What do memory champions demonstrate about human memory?",
       "choices": [
-        "the importance of a sense of humour",
-        "how to be a successful traveller",
-        "the need to protect your goods",
-        "how to get the most out of life"
+        "that it naturally deteriorates with age",
+        "its extraordinary potential when trained",
+        "that it works better with technology",
+        "its limitations in modern society"
+      ],
+      "answer": 1,
+      "highlight": "demonstrating the extraordinary potential of trained human memory"
+    },
+    {
+      "text": "However, critics argue that in our digital age, investing time in memory training is increasingly obsolete. Why memorize information when it's instantly accessible through smartphones and search engines? This perspective views external memory devices as cognitive extensions of the human mind.",
+      "question": "How do critics view external memory devices like smartphones?",
+      "choices": [
+        "as harmful distractions",
+        "as cognitive extensions of the mind",
+        "as temporary solutions",
+        "as expensive necessities"
+      ],
+      "answer": 1,
+      "highlight": "external memory devices as cognitive extensions of the human mind"
+    },
+    {
+      "text": "Research suggests that the act of memorization itself strengthens neural pathways and enhances overall cognitive function. Students who memorize poetry show improved pattern recognition, while those who learn mathematical formulas by heart develop better numerical reasoning skills.",
+      "question": "What benefit do students gain from memorizing poetry?",
+      "choices": [
+        "improved pattern recognition",
+        "better mathematical skills",
+        "enhanced creativity",
+        "stronger language abilities"
+      ],
+      "answer": 0,
+      "highlight": "Students who memorize poetry show improved pattern recognition"
+    },
+    {
+      "text": "The debate extends beyond individual benefits to cultural preservation. Many oral cultures maintain their knowledge through memorized stories, songs, and rituals. As these communities modernize, the transmission of traditional knowledge faces disruption from changing memory practices.",
+      "question": "How do oral cultures traditionally maintain their knowledge?",
+      "choices": [
+        "through written documents",
+        "through memorized stories and rituals",
+        "through digital recordings",
+        "through formal education"
+      ],
+      "answer": 1,
+      "highlight": "maintain their knowledge through memorized stories, songs, and rituals"
+    },
+    {
+      "text": "As we navigate the tension between ancient wisdom and modern convenience, the question remains: in an age of infinite external storage, what role should human memory play? Perhaps the answer lies not in choosing between memorization and technology, but in understanding how they can complement each other.",
+      "question": "What does the passage suggest about the relationship between memorization and technology?",
+      "choices": [
+        "technology should replace memorization",
+        "memorization is superior to technology",
+        "they should be used separately",
+        "they can complement each other"
       ],
       "answer": 3,
-      "highlight": "Generosity, goodwill, and optimism were highly valued... They simply loved life."
+      "highlight": "not in choosing between memorization and technology, but in understanding how they can complement each other"
     }
   ]
 }
