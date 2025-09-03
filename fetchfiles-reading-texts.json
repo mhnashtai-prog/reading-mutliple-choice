@@ -1,13 +1,13 @@
 [
   {
     "id": "testingwater",
-    "title": "Testing the Water",
+    "title": "Testing the Water", 
     "file": "readingpassages/testingthewater.json"
   },
   {
     "id": "noreen",
     "title": "There's No Stopping Her",
-    "file": "readingpassages/noreen.json"
+    "file": "readingpassages/noreen.json" 
   },
   {
     "id": "student6m",
@@ -15,52 +15,57 @@
     "file": "readingpassages/student6million.json"
   },
   {
-    "id": "stitchintime",
+    "id": "stitchintime", 
     "title": "A Stitch in Time",
     "subtitle": "Steve McGrail investigates the world of street theatre costume design.",
     "file": "readingpassages/stitchintime.json"
   },
   {
     "id": "seeandbeseen",
-    "title": "See and Be Seen",
+    "title": "See and Be Seen", 
     "subtitle": "Art is about communication, says Bob Brandy.",
     "file": "readingpassages/seeandbeseen.json"
   },
   {
     "id": "specialistmusicschools",
     "title": "Specialist Music Schools",
-    "subtitle": "How to cope with a child who shows outstanding musical ability?",
+    "subtitle": "How to cope with a child who shows outstanding musical ability?", 
     "file": "readingpassages/specialistmusicschools.json"
   },
   {
-    "id": "naturalclassic",
-    "title": "Natural Classic: The Golden Hawks",
-    "subtitle": "Martha Holmes, marine biologist, on the book that most influenced her.",
+    "id": "memorypalace",
+    "title": "The Memory Palace: Ancient Techniques Meet Modern Science",
+    "subtitle": "Exploring how traditional mnemonic methods align with contemporary understanding of the brain.",
     "file": "readingpassages/naturalclassic.json"
   },
   {
-    "id": "passage1",
-    "title": "Passage One (Under Construction)",
+    "id": "digitalgreen", 
+    "title": "The Digital Green Revolution",
+    "subtitle": "How technology is reshaping environmental conservation and sustainable practices.",
     "file": "readingpassages/passage1.json"
   },
   {
-    "id": "passage2",
-    "title": "Passage Two (Under Construction)",
+    "id": "livingwithai",
+    "title": "Living with Artificial Intelligence", 
+    "subtitle": "Exploring society's complex relationship with automated decision-making systems.",
     "file": "readingpassages/passage2.json"
   },
   {
-    "id": "passage3",
-    "title": "Passage Three (Under Construction)",
+    "id": "futureofwork",
+    "title": "The Future of Work: Beyond the Office",
+    "subtitle": "How remote work is reshaping productivity, well-being, and professional relationships.",
     "file": "readingpassages/passage3.json"
   },
   {
-    "id": "passage4",
-    "title": "Passage Four (Under Construction)",
+    "id": "savinglanguages",
+    "title": "Saving Languages in the Digital Age", 
+    "subtitle": "How technology offers hope for preserving endangered indigenous languages and cultural heritage.",
     "file": "readingpassages/passage4.json"
   },
   {
-    "id": "passage5",
-    "title": "Passage Five (Under Construction)",
+    "id": "redplanet",
+    "title": "The Red Planet Challenge",
+    "subtitle": "Examining the scientific and ethical complexities of establishing human settlements on Mars.", 
     "file": "readingpassages/passage5.json"
   }
 ]
