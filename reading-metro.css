@@ -1,69 +1,85 @@
+/* Enhanced Reading Metro CSS - Modern, Sleek, Mobile-Optimized */
+
 body {
   background: linear-gradient(135deg,#2c5aa0 0%,#f5a9ba 100%);
   font-family: 'Inter', 'Montserrat', Arial, sans-serif;
-  margin:0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
+
 .container {
   max-width: 720px;
-  margin:0 auto;
-  padding:20px 1vw 60px 1vw;
+  margin: 0 auto;
+  padding: 20px 1vw 60px 1vw;
 }
+
 h1 {
   text-align: center;
   color: #fff;
-  font-size:2.22rem;
+  font-size: 2.22rem;
   letter-spacing: 0.04em;
   font-family: 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
-/*** Enhanced Glassmorphic Cards ***/
+
+/* Enhanced Glassmorphic Cards - Fixed CSS */
 .card {
-  background: #EDE7EA; /* Solid pink-grey, NO gradient! */
+  background: #EDE7EA;
   backdrop-filter: blur(13px) saturate(1.2);
   border: 1.5px solid rgba(255,255,255,0.14);
   border-radius: 14px;
-  box-shadow: 0 10px 26px -8px rgba(44,90,160,0.08), 0 1.5px 3px #eee6;
-  padding:16px 12px 18px 14px;
+  box-shadow: 0 10px 26px -8px rgba(44,90,160,0.08), 0 1.5px 3px rgba(238,238,238,0.6);
+  padding: 16px 14px 16px 14px;
   margin-bottom: 20px;
-  transition: all .22s ease;
+  transition: all 0.22s ease;
   position: relative;
 }
+
 .card:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 30px -8px rgba(44,90,160,0.12), 0 2px 4px #eee8;
+  box-shadow: 0 12px 30px -8px rgba(44,90,160,0.12), 0 2px 4px rgba(238,238,238,0.8);
 }
+
 .text-box {
-  margin-bottom: 16px;
-  color: #222;
+  margin-bottom: 14px;
+  color: #2a2a2a;
   line-height: 1.58;
   font-size: 1rem;
+  font-weight: 400;
 }
+
 .question-title {
-  font-size: 1.03rem;
-  margin-bottom: 12px;
+  font-size: 1.02rem;
+  margin-bottom: 10px;
   color: #2442b0;
   font-weight: 500;
 }
+
 .choices {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  margin-bottom: 12px;
+  gap: 2px;
+  margin-bottom: 10px;
 }
-/*** Standardized Choice Box Styling ***/
+
+/* Standardized Choice Box Styling - Reduced Padding */
 .choice {
-  background: #F7F6F7; /* Very pale pink-grey */
+  background: #F7F6F7;
   font-size: 0.9rem;
   font-family: 'Inter', 'Montserrat', Arial, sans-serif;
-  font-weight: 500;
-  padding: 8px 12px;
-  min-height: 28px;
+  font-weight: 400;
+  padding: 6px 10px;
+  min-height: 36px;
   border-radius: 10px;
   border-left: 5px solid #FFA066;
-  color: #222b2c;
+  color: #2a2a2a;
   margin-bottom: 0;
   box-shadow: 0 2px 9px -2px rgba(44,90,160,0.09);
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(8px) saturate(1.25);
@@ -80,88 +96,101 @@ h1 {
   -ms-user-select: none;
   user-select: none;
 }
+
 .choice::before {
   content: '';
   position: absolute;
-  left: 0; top: 0; bottom: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 5px;
-  background: #DBCDD2; /* Richer, warm pink-grey */
+  background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
   border-radius: 8px 0 0 8px;
   z-index: 2;
-  transition: background .17s;
+  transition: background 0.17s;
 }
+
 .choice:hover {
   background: rgba(255,255,255,0.35);
   color: #784621;
   border-left-color: #e96443;
   transform: translateX(2px);
 }
+
 .choice.selected, .choice:active {
-  background: #EDE7EA;
+  background: linear-gradient(90deg, #eaffba 0%, #bfff00 90%);
   color: #274604;
   border-left-color: #bfff00;
-  font-weight: 600;
-  box-shadow: 0 4px 14px -2px #bfff0040;
+  font-weight: 500;
+  box-shadow: 0 4px 14px -2px rgba(191,255,0,0.4);
   transform: translateX(3px);
 }
+
 .choice.selected::before, .choice:active::before {
-  background: #EDE7EA;
+  background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
 }
-/*** Enhanced Text Highlighting ***/
+
+/* Enhanced Text Highlighting */
 .highlighted, .highlight-target.highlighted {
   background: linear-gradient(90deg, #daff47 0%, #bfff00 80%) !important;
   color: #16390e !important;
   border-radius: 4px;
   padding: 2px 4px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 0 1px 3px rgba(191, 255, 0, 0.3);
-  transition: all .2s;
+  transition: all 0.2s;
   display: inline;
 }
+
 .feedback {
   margin-top: 8px;
   font-size: 0.95em;
   color: #c72c2c;
-  min-height: 18px;
-  font-weight: 500;
+  min-height: 16px;
+  font-weight: 400;
 }
-/*** Enhanced Button Styling ***/
+
+/* Enhanced Button Styling - Reduced Padding */
 .card-actions {
-  margin-top: 14px;
+  margin-top: 12px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
+
 .card-btn {
-  background: #EDE7EA;
+  background: linear-gradient(135deg, #bfff00 0%, #9fff50 100%);
   color: #214e19;
   border: none;
   border-radius: 10px;
-  font-size: 0.9em;
-  padding: 8px 16px;
+  font-size: 0.85em;
+  padding: 6px 12px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(191, 255, 0, 0.2);
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 500;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  min-height: 36px;
+  min-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .card-btn:hover {
-  background: #DBCDD2;
+  background: linear-gradient(135deg, #a8ff00 0%, #85e842 100%);
   transform: translateY(-1px);
   box-shadow: 0 3px 8px rgba(191, 255, 0, 0.3);
 }
+
 .card-btn:active {
-  background: #DBCDD2;
+  background: linear-gradient(135deg, #a8d170 0%, #7fb050 100%);
   transform: translateY(0);
   box-shadow: 0 1px 3px rgba(191, 255, 0, 0.4);
 }
+
 .card-btn:disabled {
   background: #cdecce;
   cursor: default;
@@ -169,8 +198,173 @@ h1 {
   transform: none;
   box-shadow: none;
 }
-/*** Standardized Metro Link Styling ***/
+
+/* Standardized Metro Link Styling - Reduced Padding, Unified Design */
 .metro-label-link {
   display: block;
   font-size: 0.9rem;
-  font-family: 'Inter', 'Montserrat', Arial
+  font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  padding: 6px 12px;
+  min-height: 36px;
+  background: #F7F6F7;
+  border-radius: 10px;
+  border-left: 5px solid #FFA066;
+  color: #2a2a2a;
+  margin-bottom: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.metro-label-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(200deg, #FFA066 30%, #e96443 100%);
+  border-radius: 8px 0 0 8px;
+  z-index: 2;
+  transition: background 0.17s;
+}
+
+.metro-label-link.done {
+  background: linear-gradient(90deg, #eaffba 0%, #bfff00 90%);
+  color: #274604;
+  border-left: 5px solid #bfff00;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 1;
+  box-shadow: 0 3px 12px rgba(70,183,66,0.2);
+}
+
+.metro-label-link.done::before {
+  background: linear-gradient(210deg, #bfff00 40%, #8cffda 100%);
+}
+
+.metro-label-link.uc {
+  background: linear-gradient(135deg, #e8e6e9 0%, #f0f0f0 100%);
+  color: #999;
+  font-weight: 400;
+  border-left: 5px solid #CBB299;
+  cursor: not-allowed;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.metro-label-link:hover {
+  background: rgba(255,255,255,0.35);
+  color: #784621;
+  border-left-color: #e96443;
+  transform: translateX(2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.metro-label-link.done:hover {
+  background: linear-gradient(90deg, #deff9a 0%, #a8ff00 90%);
+  transform: translateX(2px);
+}
+
+/* Progress Indicator in Metro Links */
+.metro-progress-indicator {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #bfff00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #274604;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.metro-label-link.done .metro-progress-indicator {
+  opacity: 1;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 700px) {
+  .container {
+    padding: 16px 3vw 80px 3vw;
+    font-size: 0.95em;
+  }
+  
+  .choice {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+    min-height: 40px;
+  }
+  
+  .card-btn {
+    font-size: 0.8em;
+    padding: 8px 12px;
+    min-height: 36px;
+  }
+  
+  .metro-label-link {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+  
+  .choice {
+    font-size: 0.8rem;
+    padding: 10px 10px;
+    min-height: 44px;
+  }
+  
+  .card-actions {
+    gap: 4px;
+  }
+  
+  .card-btn {
+    font-size: 0.75em;
+    padding: 10px 10px;
+    min-height: 40px;
+    flex: 1;
+    min-width: 70px;
+  }
+  
+  .metro-label-link {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+}
+
+/* Smooth Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.metro-label-link {
+  animation: fadeIn 0.2s ease-out;
+}
